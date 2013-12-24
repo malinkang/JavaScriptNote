@@ -312,6 +312,7 @@ NaN本身有两个非同寻常的特点：
    + 和parseInt()一样都会忽略前导的0。parseFloat()可以识别前面讨论过的所有浮点数值格式，也包括十进制整数格式。但十六进制格式的字符串则始终被转换为0。
    + parseFloat()只解析十进制，因此它没有用第二个参数指定基数的用法。最后还需要注意一点：如果字符串包含的是一个可解析为整数的数（没有小数点，或者小数点后都是0），parseFloat()会返回整数。
 ``` javascript
+
       <script type="text/javascript">
        alert(parseFloat("123blue"));//123
        alert(parseFloat("0xA"));//0
