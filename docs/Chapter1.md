@@ -1,19 +1,25 @@
 第 1 章
 ================
 ###目录
-* **[1.1在HTML中使用javascript]**
-  + **[1.1.1使用\<script>嵌入JavaScript代码]**
-  + **[1.1.2包含外部Javascript文件]**
-* **[1.2基本语法]**
-  + **[1.2.1区分大小写]**
-  + **[1.2.2标识符]**
-  + **[1.2.3注释]**
-  + **[1.2.4关键字和保留字]**
-  + **[1.2.5变量]**
-  + **[1.2.6数据类型]**
-    * **[1.2.6.1 typeof操作符]**
-    * **[1.2.6.2 Undefined类型]**
-    * **[1.2.6.2 Undefined类型]**
+* **[1.1在HTML中使用javascript][1]**
+  + **[1.1.1使用\<script>嵌入JavaScript代码][2]**
+  + **[1.1.2包含外部Javascript文件][3]**
+* **[1.2基本语法][4]**
+  + **[1.2.1区分大小写][5]**
+  + **[1.2.2标识符][6]**
+  + **[1.2.3注释][7]**
+  + **[1.2.4关键字和保留字][8]**
+  + **[1.2.5变量][9]**
+  + **[1.2.6数据类型][10]**
+    * **[1.2.6.1 typeof操作符][11]**
+    * **[1.2.6.2 Undefined类型][12]**
+    * **[1.2.6.3 Null类型][13]**
+    * **[1.2.6.4 Boolean类型][14]**
+    * **[1.2.6.5 Number类型][15]**
+      + **[1.2.6.5.1 浮点值][16]**
+      + **[1.2.6.5.2 数值范围][17]**
+      + **[1.2.6.5.2 NaN][18]**
+      + **[1.2.6.5.4 数值转换][19]**
 
 ###1.1 在HTML中使用JavaScript
 
@@ -312,7 +318,30 @@ NaN本身有两个非同寻常的特点：
        alert(parseFloat("3.12e8"));//312000000
        </script>
 ``` 
+
 ##### 1.2.6.6 String类型
+
+
+[1]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#11-%E5%9C%A8html%E4%B8%AD%E4%BD%BF%E7%94%A8javascript
+[2]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#111-%E4%BD%BF%E7%94%A8script%E5%B5%8C%E5%85%A5javascript%E4%BB%A3%E7%A0%81
+[3]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#112-%E5%8C%85%E5%90%AB%E5%A4%96%E9%83%A8javascript%E6%96%87%E4%BB%B6
+[4]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95
+[5]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#121%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99
+[6]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#122%E6%A0%87%E8%AF%86%E7%AC%A6
+[7]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#123%E6%B3%A8%E9%87%8A
+[8]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#124%E5%85%B3%E9%94%AE%E5%AD%97%E5%92%8C%E4%BF%9D%E7%95%99%E5%AD%97
+[9]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#125%E5%8F%98%E9%87%8F
+[10]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#126%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B
+[11]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1261-typeof%E6%93%8D%E4%BD%9C%E7%AC%A6
+[12]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1262-undefined%E7%B1%BB%E5%9E%8B
+[13]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1263-null%E7%B1%BB%E5%9E%8B
+[14]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1264-boolean%E7%B1%BB%E5%9E%8B
+[15]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1265-number%E7%B1%BB%E5%9E%8B
+[16]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12651%E6%B5%AE%E7%82%B9%E5%80%BC
+[17]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12652%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4
+[18]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12653nan
+[19]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12654%E6%95%B0%E5%80%BC%E8%BD%AC%E6%8D%A2
+
 
 
 
