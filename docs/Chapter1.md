@@ -268,6 +268,7 @@ NaN本身有两个非同寻常的特点：
   + 如果是对象，则调用对象的valueof()方法,然后按照前面的规则转换返回的值。如果转换的结果是NaN，则调用对象的toString()方法，然后再次按照前面的规则转换成字符串。
 
  ``` javascript
+ 
         <script type="text/javascript">
         alert(Number(false)); //0
        alert(Number(null));//0
@@ -285,6 +286,7 @@ NaN本身有两个非同寻常的特点：
   + 如果第一个字符是数字字符，parseInt()会继续解析第二个字符，直到解析完所有后续自付或者遇到了一个非数字字符。
   + parseInt()能够识别出各种整数格式，parseInt()可以为函数提供第二个参数：转换时使用的基数。
 ``` javascript
+
       <script type="text/javascript">
       alert(parseInt(false)); //NaN
        alert(parseInt(null));//NaN
