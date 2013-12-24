@@ -253,7 +253,7 @@ NaN本身有两个非同寻常的特点：
         </script>
 ``` 
 ###### 1.2.6.5.4.数值转换
-有3个函数可以把飞数值转换为数值：
+有3个函数可以把非数值转换为数值：
 
 * Number()：可以用于任何数据类型，转换的规则如下
   + 如果是Boolean值，true和false将分别被转换为1和0.
@@ -320,6 +320,159 @@ NaN本身有两个非同寻常的特点：
 ``` 
 
 ##### 1.2.6.6 String类型
+
+字符串可以由双引号或单引号表示，这两种语法形式没有什么区别。不过，以双引号开头的字符串也必须是以双引号结尾，而单引号开头的字符串必须以单引号结尾。
+
+###### 1.2.6.6.1 转义字符
+###### 1.2.6.6.2 字符串特点
+字符串是不可变的。
+###### 1.2.6.6.3 转换字符串
+
+要把一个值转换为一个字符串有两种方式
+
+* 使用toString()方法
+  + 几乎每个值都有的toString()方法，但null和undefined值没有这个方法。
+  + 在调用toString()方法时，可以传递一个参数：输入数值的基数，通过传递基数，toString()可以输入以二进制、八进制、十六进制，乃至其他任意有效进制格式表示。
+  
+  ``` javascript
+      <script type="text/javascript">
+       var a=10,b=true;
+       alert(a.toString());//10
+       alert(a.toString(2));//1010
+       alert(a.toString(8));//12
+       alert(a.toString(10));//10
+       alert(a.toString(16));//a
+       alert(b);//true
+       </script>
+``` 
+* 使用转型函数String(),这个函数能够将任何类型的值转换为字符串。
+  + 如果值有toString()方法，则叼哦那个该方法（没有参数）并返回相应的结果。
+  + 如果值是null，则返回"null"
+  + 如果值是undefined,则返回 “undefined”。
+   ``` javascript
+      <script type="text/javascript">
+       var a=10,b=true,c=null,d;
+       alert(String(a));//10
+       alert(String(b));//true
+       alert(String(c));//null
+       alert(String(d));//undefined
+       </script>
+``` 
+
+##### 1.2.6.7 Object类型
+
+对象可以通过执行new操作符后跟要创建的对象类型的名称来创建。在不传递参数的情况下，完全可以省略圆括号，不过不推荐这么做。
+   ``` javascript
+      <script type="text/javascript">
+      var o1=new Object();
+      var o2=new Object;//有效，但不推荐省略括号
+       </script>
+```
+Object类型是所有实例的基础。Object每个实例都具有一下属性和方法。
+* Constructor：构造函数
+* hasOwnProperty(propertyName)：用于检查给定的属性在当前对象实例子中是否存在。
+* isPrototypeOf(object)：用于检查传入的对象是否是另一个对象的原型。
+* propertyIsEnumerable(propertyName)：用于检查给定的属性是否能够使用for-in语句来枚举。
+* toLocaleString()：
+* toString()：
+* valueOf()：
+
+#### 1.2.7 操作符
+
+##### 1.2.7.1 一元操作符
+
+###### 1.2.7.1.1 递增和递减
+
+###### 1.2.7.1.2 加、减、乘、除和取余
+
+##### 1.2.7.2 位操作符
+
+###### 1.2.7.2.1 原码、反码和补码
+
+###### 1.2.7.2.2 非 
+
+按位非操作符用一个波浪线（~）表示。
+
+###### 1.2.7.2.3 与
+
+按位与操作符由一个和号字符（&）表示。
+
+###### 1.2.7.2.4 或
+
+按位或操作符由一个竖线符号（|）表示。
+
+###### 1.2.7.2.5 异或
+按位异或操作符由一个插入符号（^）表示。
+
+###### 1.2.7.2.6 左移
+左移操作符由两个小于号（<<）表示。
+
+###### 1.2.7.2.7 有符号右移动
+有符号右移动操作符由两个大于号（>>）表示。
+###### 1.2.7.2.8 无符号右移动
+无符号右移动操作符由三个大于号（>>>）表示。
+
+##### 1.2.7.3 逻辑运算符
+
+###### 1.2.7.3.1 逻辑非
+逻辑非操作符由一个叹号（!）表示。
+###### 1.2.7.3.2 逻辑与
+逻辑与操作符由两个和好（&&）表示。
+###### 1.2.7.3.3 逻辑或
+逻辑或操作符由两个竖线符号（||）表示。
+
+##### 1.2.7.4 关系运算符
+##### 1.2.7.5 赋值运算符
+##### 1.2.7.6 三目运算符
+#### 1.2.8语句
+##### 1.2.8.1 if语句
+##### 1.2.8.2 switch语句
+可以在switch语句中使用任何数据类型，每个case的值不一定是常量，可以是变量，甚至是表达式。
+   ``` javascript
+      var b="goodbye";
+       switch("goodbye"){
+           case "hello"+"world":
+                alert("Greeting");
+                break; 
+           case b:
+                alert("GoodBye");
+                break; 
+       }//输出goodbye
+       </script>
+```
+
+   ``` javascript
+     var num=25;
+       switch(true){
+           case num<0:
+           alert("Less than 0");
+           break;
+           case num>=0 && num<=25:
+           alert("BetWeen 0 and 25");
+           break;
+           default:
+           alert("More Than 25");
+       }//BetWeen 0 and 25
+       </script>
+```
+
+##### 1.2.8.3 do-while语句
+##### 1.2.8.4 while语句
+##### 1.2.8.5 for语句
+##### 1.2.8.6 for-in语句
+##### 1.2.8.7 label语句
+使用label语句可以在代码中添加标签，方便使用
+##### 1.2.8.8 break和continue语句
+##### 1.2.8.9 with语句
+
+
+#### 1.2.9函数
+
+
+
+
+
+
 
 
 [1]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#11-%E5%9C%A8html%E4%B8%AD%E4%BD%BF%E7%94%A8javascript
