@@ -25,7 +25,6 @@ HTML4.01为\<script>定义了6个属性：
        <script type="text/javascript">
             alert("Hi");
         </script>
-
 ```
 
 在使用\<script>嵌入javascript代码，记住不要在代码中任何地方出现\</script>字符串,如下面代码就会产生错误：
@@ -44,21 +43,17 @@ HTML4.01为\<script>定义了6个属性：
       <script type="text/javascript">
             alert("<\/script>");
       </script>
-
 ```
 * **包含外部Javascript文件**
 
 ``` javascript
 
       <script type="text/javascript" src="example.js"></script>
-
 ```
 也可以省略结束的</script>标签，例如
 
 ``` javascript
-
       <script type="text/javascript" src="example.js"/>
-
 ```
 ### 1.2基本语法
 
@@ -83,7 +78,6 @@ HTML4.01为\<script>定义了6个属性：
 JavaScript的变量是松散类型的，所谓松散类型就是可以用来保存任何类型的数据。换句话说，每个变量仅仅是一个用于保存值的占位符而已。定义变量时要使用var操作符。
 
 ``` javascript
-
           <script type="text/javascript">
         //定义了一个名字为message的变量，该变量可以用来保存任何值。
         //像这样未经过初始化的变量，会保存一个特殊值undefined
@@ -95,7 +89,6 @@ JavaScript的变量是松散类型的，所谓松散类型就是可以用来保�
             var msg=100;
             alert(msg);
         </script>
-
 ```
 var在函数内定义的变量为局部变量，如果省略var则是全局变量
 
@@ -112,7 +105,6 @@ var在函数内定义的变量为局部变量，如果省略var则是全局变�
         test2();
         alert(msg2);
     </script>
-
 ```
 
 
