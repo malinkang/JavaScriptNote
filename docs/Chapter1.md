@@ -1,5 +1,19 @@
 第 1 章
 ================
+###目录
+* **[1.1在HTML中使用javascript]**
+  + **[1.1.1使用\<script>嵌入JavaScript代码]**
+  + **[1.1.2包含外部Javascript文件]**
+* **[1.2基本语法]**
+  + **[1.2.1区分大小写]**
+  + **[1.2.2标识符]**
+  + **[1.2.3注释]**
+  + **[1.2.4关键字和保留字]**
+  + **[1.2.5变量]**
+  + **[1.2.6数据类型]**
+    * **[1.2.6.1 typeof操作符]**
+    * **[1.2.6.2 Undefined类型]**
+    * **[1.2.6.2 Undefined类型]**
 
 ###1.1 在HTML中使用JavaScript
 
@@ -17,7 +31,7 @@ HTML4.01为\<script>定义了6个属性：
 
 使用\<script>元素的方式有两种：直接在页面中嵌入javascript代码和包含外部javascript文件。
 
-* **使用\<script>嵌入Javascript代码**
+#### 1.1.1 使用\<script>嵌入Javascript代码
 
  
 ``` javascript
@@ -44,7 +58,7 @@ HTML4.01为\<script>定义了6个属性：
             alert("<\/script>");
       </script>
 ```
-* **包含外部Javascript文件**
+#### 1.1.2 包含外部Javascript文件 
 
 ``` javascript
 
@@ -225,7 +239,7 @@ NaN本身有两个非同寻常的特点：
 
 ``` javascript
         <script type="text/javascript">
-         alert(isNaN(NaN));//true;
+       alert(isNaN(NaN));//true;
        alert(isNaN(10));//false
        alert(isNaN("10"));// false 可以被转能换成数字10
        alert(isNaN("abc"));//true 
@@ -249,16 +263,56 @@ NaN本身有两个非同寻常的特点：
 
  ``` javascript
         <script type="text/javascript">
-         alert(isNaN(NaN));//true;
-       alert(isNaN(10));//false
-       alert(isNaN("10"));// false 可以被转能换成数字10
-       alert(isNaN("abc"));//true 
-       alert(isNaN(true));//false 可以转换成数字1    
+        alert(Number(false)); //0
+       alert(Number(null));//0
+       alert(Number(undefined)); //NaN
+       alert(Number("1"));  //1
+       alert(Number("-123"));  //-123
+       alert(Number("011"));  //11 0被忽略
+       alert(Number("0xA"));//10
+       alert(Number("abc"));//NaN  
         </script>
 ``` 
-* parseInt()：把字符串转换成数值
-* parseFloat()：把字符串转换成数值
 
+* parseInt()：parseInt()可以将字符串转换为数值，转换规则如下：
+  + 它会忽略字符串前面的空格，直至找到第一个非空格字符串。如果第一个字符串不是数字字符或者正负号，parseInt()就会返回NaN。
+  + 如果第一个字符是数字字符，parseInt()会继续解析第二个字符，直到解析完所有后续自付或者遇到了一个非数字字符。
+  + parseInt()能够识别出各种整数格式，parseInt()可以为函数提供第二个参数：转换时使用的基数。
+``` javascript
+      <script type="text/javascript">
+      alert(parseInt(false)); //NaN
+       alert(parseInt(null));//NaN
+       alert(parseInt(undefined)); //NaN
+       alert(parseInt("1"));  //1
+       alert(parseInt("-123"));  //-123
+       alert(parseInt("011"));  //11 0被忽略
+       alert(parseInt("0xA"));//10
+       alert(parseInt("abc"))//NaN
+       alert(parseInt("123abc"));//123
+       alert(parseInt("384.45"));//384 因为小数点不是有效的数字字符。
+       alert(parseInt("10",2));// 2 按照2进制进行解析
+       alert(parseInt("10",8));// 8
+       alert(parseInt("10",10));//10 
+       alert(parseInt("10",16));//16
+       alert(parseInt("AGA",16));//10 
+       alert(parseInt("AGA",10));//NaN
+       alert(parseInt("0xAGA",16));//按照16进制解析
+       </script>
+``` 
+* parseFloat():
+   + 与parseInt()函数类似，也是从第一个字符开始解析每个字符。而且也是一直解析到字符串末尾，或者解析到遇见一个无效的浮点数字字符为止。也就是说字符串的第一个小数点是有效的，而第二个小数点是无效的。
+   + 和parseInt()一样都会忽略前导的0。parseFloat()可以识别前面讨论过的所有浮点数值格式，也包括十进制整数格式。但十六进制格式的字符串则始终被转换为0。
+   + parseFloat()只解析十进制，因此它没有用第二个参数指定基数的用法。最后还需要注意一点：如果字符串包含的是一个可解析为整数的数（没有小数点，或者小数点后都是0），parseFloat()会返回整数。
+``` javascript
+      <script type="text/javascript">
+       alert(parseFloat("123blue"));//123
+       alert(parseFloat("0xA"));//0
+       alert(parseFloat("22.5"));//22.5
+       alert(parseFloat("22.33.44"));//22.33
+       alert(parseFloat("3.12e8"));//312000000
+       </script>
+``` 
+##### 1.2.6.6 String类型
 
 
 
