@@ -55,7 +55,11 @@
     * **[1.2.8.7 label语句][52]**
     * **[1.2.8.8 break和continue语句][53]**
     * **[1.2.8.9 with语句][54]**
- + **[1.2.9函数][55]**  
+ + **[1.2.9函数][55]**
+    * **[1.2.9.1函数的定义和调用][56]**
+    * **[1.2.9.2 参数][57]**
+    * **[1.2.9.3 没有重载][58]**
+
   
 ###1.1 在HTML中使用JavaScript
 
@@ -667,6 +671,9 @@ arguments对象与数组类似，可以使用方括号语法访问它的每一�
 [53]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1288-break%E5%92%8Ccontinue%E8%AF%AD%E5%8F%A5
 [54]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1289-with%E8%AF%AD%E5%8F%A5
 [55]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#129%E5%87%BD%E6%95%B0
+[56]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1291%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E8%B0%83%E7%94%A8
+[57]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1292-%E5%8F%82%E6%95%B0
+[58]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1293-%E6%B2%A1%E6%9C%89%E9%87%8D%E8%BD%BD
 
 
 
