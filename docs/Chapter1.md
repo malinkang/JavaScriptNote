@@ -20,7 +20,42 @@
       + **[1.2.6.5.2 数值范围][17]**
       + **[1.2.6.5.2 NaN][18]**
       + **[1.2.6.5.4 数值转换][19]**
-
+    * **[1.2.6.5 String类型][20]**
+      + **[1.2.6.6.1 转义字符][21]**
+      + **[1.2.6.6.2 字符串特点][22]**
+      + **[1.2.6.6.3 转换字符串][23]**
+    * **[1.2.6.7 Object类型][24]**  
+  + **[1.2.7 操作符][25]**
+   * **[1.2.7.1 一元操作符][26]**
+      + **[1.2.7.1.1 递增和递减][27]**
+      + **[1.2.7.1.2 加、减、乘、除和取余][28]**
+   * **[1.2.7.2 位操作符][29]**  
+      + **[1.2.7.2.1 原码、反码和补码][30]**
+      + **[1.2.7.2.2 非][31]**
+      + **[1.2.7.2.3 与][32]**
+      + **[1.2.7.2.4 或][33]**
+      + **[1.2.7.2.5 异或][34]**
+      + **[1.2.7.2.6 左移][35]**
+      + **[1.2.7.2.7 有符号右移动][36]**
+      + **[1.2.7.2.8 无符号右移动][37]**
+    * **[1.2.7.3 逻辑运算符][38]**  
+      + **[1.2.7.3.1 逻辑非][39]**
+      + **[1.2.7.3.2 逻辑与][40]**
+      + **[1.2.7.3.3 逻辑或][41]**
+    * **[1.2.7.4 关系运算符][42]**
+    * **[1.2.7.5 赋值运算符][43]**
+    * **[1.2.7.6 三目运算符][44]**
+ + **[1.2.8语句][45]**
+    * **[1.2.8.1 if语句][46]**
+    * **[1.2.8.2 switch语句][47]**
+    * **[1.2.8.3 do-while语句][48]**
+    * **[1.2.8.4 while语句][49]**
+    * **[1.2.8.5 for语句][50]**
+    * **[1.2.8.6 for-in语句][51]**
+    * **[1.2.8.7 label语句][52]**
+    * **[1.2.8.8 break和continue语句][53]**
+    * **[1.2.8.9 with语句][54]**
+ + **[1.2.9函数][55]**   
 ###1.1 在HTML中使用JavaScript
 
 
@@ -432,6 +467,7 @@ Object类型是所有实例的基础。Object每个实例都具有一下属性�
 ##### 1.2.8.2 switch语句
 可以在switch语句中使用任何数据类型，每个case的值不一定是常量，可以是变量，甚至是表达式。
    ``` javascript
+   <script type="text/javascript">
       var b="goodbye";
        switch("goodbye"){
            case "hello"+"world":
@@ -441,10 +477,11 @@ Object类型是所有实例的基础。Object每个实例都具有一下属性�
                 alert("GoodBye");
                 break; 
        }//输出goodbye
-       </script>
+     </script>
 ```
 
    ``` javascript
+      <script type="text/javascript">
      var num=25;
        switch(true){
            case num<0:
@@ -497,6 +534,43 @@ Object类型是所有实例的基础。Object每个实例都具有一下属性�
 [17]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12652%E6%95%B0%E5%80%BC%E8%8C%83%E5%9B%B4
 [18]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12653nan
 [19]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12654%E6%95%B0%E5%80%BC%E8%BD%AC%E6%8D%A2
+[20]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1266-string%E7%B1%BB%E5%9E%8B
+[21]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12661-%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6
+[22]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12662-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%89%B9%E7%82%B9
+[23]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12663-%E8%BD%AC%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2
+[24]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1267-object%E7%B1%BB%E5%9E%8B
+[25]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#127-%E6%93%8D%E4%BD%9C%E7%AC%A6
+[26]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1271-%E4%B8%80%E5%85%83%E6%93%8D%E4%BD%9C%E7%AC%A6
+[27]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12711-%E9%80%92%E5%A2%9E%E5%92%8C%E9%80%92%E5%87%8F
+[28]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12712-%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%92%8C%E5%8F%96%E4%BD%99
+[29]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1272-%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6
+[30]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12721-%E5%8E%9F%E7%A0%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81
+[31]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12722-%E9%9D%9E
+[32]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12723-%E4%B8%8E
+[33]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12724-%E6%88%96
+[34]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12725-%E5%BC%82%E6%88%96
+[35]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12726-%E5%B7%A6%E7%A7%BB
+[36]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12727-%E6%9C%89%E7%AC%A6%E5%8F%B7%E5%8F%B3%E7%A7%BB%E5%8A%A8
+[37]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12728-%E6%97%A0%E7%AC%A6%E5%8F%B7%E5%8F%B3%E7%A7%BB%E5%8A%A8
+[38]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1273-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6
+[39]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12731-%E9%80%BB%E8%BE%91%E9%9D%9E
+[40]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12732-%E9%80%BB%E8%BE%91%E4%B8%8E
+[41]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#12733-%E9%80%BB%E8%BE%91%E6%88%96
+[42]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1274-%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6
+[43]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1275-%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6
+[44]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1276-%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6
+[45]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#128%E8%AF%AD%E5%8F%A5
+[46]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1281-if%E8%AF%AD%E5%8F%A5
+[47]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1282-switch%E8%AF%AD%E5%8F%A5
+[48]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1283-do-while%E8%AF%AD%E5%8F%A5
+[49]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1284-while%E8%AF%AD%E5%8F%A5
+[50]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1285-for%E8%AF%AD%E5%8F%A5
+[51]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1286-for-in%E8%AF%AD%E5%8F%A5
+[52]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1287-label%E8%AF%AD%E5%8F%A5
+[53]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1288-break%E5%92%8Ccontinue%E8%AF%AD%E5%8F%A5
+[54]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#1289-with%E8%AF%AD%E5%8F%A5
+[55]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md#129%E5%87%BD%E6%95%B0
+
 
 
 
