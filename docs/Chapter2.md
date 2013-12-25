@@ -99,6 +99,7 @@
   + 如果预先知道数组要保存的项目数量，也可以给该构造函数传递该数量
   + 也可以想Array构造函数传递数组中应该包含的项；如果传递的是数值，会按照给定的数值创建包含给定项数的数组；其他值则会创建包含那个值的只有一项的数组。
   + 用Array构造函数时也可以省略new操作符
+  
 ``` javascript
 
  <script type="text/javascript">
@@ -181,4 +182,14 @@
        
 ```
 
+[1]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#21%E4%BD%9C%E7%94%A8%E5%9F%9F
+[2]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#211%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F
+[3]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#212%E6%B2%A1%E6%9C%89%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F
+[4]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#22%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B
+[5]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#221-object%E7%B1%BB%E5%9E%8B
+[6]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#222-array%E7%B1%BB%E5%9E%8B
+[7]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2221-%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84
+[8]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2222-%E6%95%B0%E7%BB%84%E9%A1%B9%E5%92%8C%E9%95%BF%E5%BA%A6
+[9]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2223-%E6%A3%80%E6%B5%8B%E6%95%B0%E7%BB%84
+[10]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2224-%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95
 
