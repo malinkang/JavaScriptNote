@@ -55,7 +55,8 @@
     * **[1.2.8.7 label语句][52]**
     * **[1.2.8.8 break和continue语句][53]**
     * **[1.2.8.9 with语句][54]**
- + **[1.2.9函数][55]**   
+ + **[1.2.9函数][55]**  
+  
 ###1.1 在HTML中使用JavaScript
 
 
@@ -501,14 +502,110 @@ Object类型是所有实例的基础。Object每个实例都具有一下属性�
 ##### 1.2.8.5 for语句
 ##### 1.2.8.6 for-in语句
 ##### 1.2.8.7 label语句
-使用label语句可以在代码中添加标签，方便使用
+使用label语句可以在代码中添加标签，方便使用。
 ##### 1.2.8.8 break和continue语句
+break和continue语句用于在循环中精确地控制代码执行。break语退出整个循环，continue会退出当前循环。
+ ``` javascript
+      <script type="text/javascript">
+       var num=0;
+        for(var i=1;i<10;i++){
+            if(i%5==0){
+               break;
+            }
+             num++;
+        }
+        alert(num);//4
+       </script>
+```
+
+ ``` javascript
+      <script type="text/javascript">
+       var num=0;
+        for(var i=1;i<10;i++){
+            if(i%5==0){
+               continue;
+            }
+             num++;
+        }
+        alert(num);//8
+       </script>
+```
 ##### 1.2.8.9 with语句
+with语句的作用是将作用于设置到一个特定的对象中，with语句语法
+with(expression)statement;
+
 
 
 #### 1.2.9函数
 
+##### 1.2.9.1函数的定义和调用
 
+ ``` javascript
+ 
+      <script type="text/javascript">
+         //函数声明
+        function sayHi(name,message){
+            alert("Hello "+name+","+message);
+        }
+        //调用
+        sayHi("Nicholas","how are you today?");
+        //输出Hello Nicholas,how are you today?
+        
+        //函数定义不必指定是否返回值
+        /**
+         * 1.函数执行完return语句之后停止并立即退出，因此位于
+         * return语句之后的任何代码都不会执行
+         * 2.return语句可以不带任何返回值 如：return;
+         */
+        function sum(num1,num2){
+            return num1+num2;
+        }
+        alert(sum(3,4));//7
+       </script>
+```
+
+##### 1.2.9.2 参数
+
+JavaScript函数不介意传递进来多少几个参数，也不再回传递进来的参数是什么数据类型。也就是说，即便你定义的函数只接受俩个参数，在调用这个函数时，也未必一定要传递两个参数。之所以会这样，JavaScript中的参数在内部用一个arguments对象表示。
+
+arguments对象与数组类似，可以使用方括号语法访问它的每一个元素，用length属性来确定传递进来多少个参数
+ ``` javascript
+ 
+      <script type="text/javascript">
+          //函数声明
+        function sayHi(){
+            alert("Hello "+arguments[0]+","+arguments[1]);
+        }
+        //调用
+        sayHi("Nicholas","how are you today?");
+        function howManyArgs(){
+            alert(arguments.length);
+        }
+        howManyArgs("a","b");//2
+        howManyArgs();//0
+        howManyArgs("c");//1
+        //混合使用
+        function add(num1,num2){
+            return arguments[0]+num2;
+        }
+        alert(add(10,20));//30
+
+       </script>
+```
+##### 1.2.9.3 没有重载
+ ``` javascript
+ 
+      <script type="text/javascript">
+         function add(num){
+            return num+100;
+        }
+        function add(num1,num2){
+            return num1+num2;
+        }
+        alert(add(199));//NaN
+
+       </script>
+```
 
 
 
