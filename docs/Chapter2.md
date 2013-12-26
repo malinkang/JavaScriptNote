@@ -181,6 +181,178 @@
   </script>
        
 ```
+##### 2.2.2.5 栈方法
+
+JavaScript提供了push()和pop()方法让数组表现得像栈（先进先出）一样。
+
+``` javascript
+        <script type="text/javascript">
+        var colors=["red","green","blue"];
+        //push()方法可以接受任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度
+        var count=colors.push("white","black");//5
+        alert(count);
+        //pop()方法则从数组末尾移除最后一项，减少数组的length值得，然后返回移除的项
+        alert(colors.pop());//black
+        alert(colors.length);//4
+        </script>
+```
+##### 2.2.2.6 队列方法
+
+结合使用shift()和push()方法，可以像使用队列（先进后出）一样使用数组。
+
+``` javascript
+        <script type="text/javascript">
+        var colors=["red","green","blue"];
+        //push()方法可以接受任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度
+        var count=colors.push("white","black");//5
+        alert(count);
+        //
+        alert(colors.shift());//red
+        alert(colors.length);//4
+        //unshift()方法可以从相反的方向来模拟队列，即在数组的前端添加项，从数组末端移除项
+        colors.unshift("gray","yellow");
+        alert(colors.pop());//black
+        </script>
+```
+##### 2.2.2.7 重排序方法
+
+数组中已经存在两个可以直接用reverse()和sort()方法。
+
+``` javascript
+
+        <script type="text/javascript">
+        var colors=["red","green","blue"];
+        colors.reverse();
+        alert(colors);//blue,green,red
+        //sort()方法按照升序排列数组项，sort()方法会调用每个数组项目的toString()转型方法，然后比较
+        //得到的字符串，已确定如何排序。即使数组中的每一项都是数值，sort()方法比较的也是字符串
+        var values=[0,1,5,10,15];
+        values.sort();
+        alert(values);//0,1,10,15,5
+        //sort()方法可以接收一个比较函数作为参数，以便我们指定那个值位于那个值的前面
+        
+        //比较函数接收两个参数，如果第一个参数位于第二个之前则返回一个负数
+        //如果两个参数相等则返回0，如果第一个参数应该位于第二个之后则返回一个正数。
+        function compare(value1,value2){
+            if(value1<value2){
+                return 1;
+            }else if(value1>value2){
+                return -1;
+            }else{
+                return 0;
+            }
+        }
+        values.sort(compare);
+        alert(values);//15,10,5,1,0
+        </script>
+```
+##### 2.2.2.8 操作方法
+
+* concat()：这个方法会想创建当前数组的一个副本，然后将接受到的参数添加到这个副本的末尾，最后返回新构建的数组。
+* slice()：可以接收一或两个参数，即要返回项的起始和结束位置。slice()方法返回从该参数指定位置开始到当前数组末尾的所有项。slice()方法不会影响原始数组。
+
+``` javascript
+        <script type="text/javascript">
+        var colors=["red","green","blue"];
+        var colors2=colors.concat("yellow","black");
+        alert(colors2);//red,green,blue,yellow,black
+        var colors3=colors2.slice(1);
+        alert(colors3);//green,blue,yellow,black
+        var colors4=colors2.slice(1,2);
+        alert(colors4);//green
+        </script>
+```        
+* splice方法恐怕要算是最强大的数组方法了，它有很多种用法。splice()的主要用途是向数组的中不插入项，但是这种方法的方式则有如下3种。
+  + 删除：可以删除任意数量的项，只需要指定2个参数：要删除第一项的位置和要删除的项数。
+  + 删除并且插入
+ 
+ ``` javascript
+ 
+       <script type="text/javascript">
+        var colors=["red","green","blue","yellow","black"];
+        //删除 
+        var remove=colors.splice(1,1);
+        alert(colors.length);//4
+        alert(remove);//green
+        //先移除再插入
+        remove=colors.splice(1,1,"green","white","orange");
+        alert(colors);//red,green,white,orange,yellow,black
+        alert(remove);//blue
+        //移除一项并插入一项 实现替换
+        remove=colors.splice(1,1,"pink");
+        </script>
+```        
+##### 2.2.2.9 位置方法
+* indexOf()： 开头开始查找
+* lastIndexOf()：末尾开始查找，找不到返回-1.
+
+ ``` javascript
+
+        <script type="text/javascript">
+        var colors=["red","green","blue","yellow","black"];
+        alert(colors.indexOf("blue"));//2
+        </script>
+```               
+##### 2.2.2.10 迭代方法
+JavaScript为数组定义了5个迭代方法。
+
+* every()：对数组中的每一项运行给定函数，如果该函数对每一项都返回true，则返回true。
+* some()：对数组中的每一项运行给定函数，如果该函数对任何一项返回true，则返回true。
+* filter()：对数组中的每一项运行给定函数，返回该函数会返回true的项组成的数组。
+* forEach()：对数组中的每一项目运行给定函数，这个方法没有返回值。
+* map()：对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。
+
+ ``` javascript
+        <script type="text/javascript">
+        var numbers=[1,2,3,4,5,4,3,2,1];
+        var everyResult=numbers.every(function(item,index,array){
+            return (item>2);
+        });
+        alert(everyResult);//false
+       var someResult=numbers.some(function(item,index,array){
+           return (item>2)
+       });
+       alert(someResult);//true
+       
+       var filterResult=numbers.filter(function(item,index,array){
+           return (item>2)
+       });
+       alert(filterResult);//3,4,5,4,3
+       
+       var mapResult=numbers.map(function(item,index,array){
+           return item*2;
+       });
+       alert(mapResult);//2,4,6,8,10,8,6,4,2
+       numbers.forEach(function(item,index,array){
+          //操作
+          alert(item);
+       });
+        </script>
+```    
+##### 2.2.2.11缩小方法
+JavaScript提供了两个缩小数组的方法：
+* reduce()
+* reduceRight()
+这两个方法都接受两个参数：一个在每一项上调用的函数和作为缩小基础的初始值。传入的函数接收4个参数：前一个值、当前值、项的索引和数组对象。
+
+ ``` javascript
+        <script type="text/javascript">
+       var numbers=[1,2,3,4,5];
+       var sum=numbers.reduce(function(prev,cur,index,array){
+           return prev+cur;
+       });
+       //第一次 perv是1 cur是2 第二次 prev是3（1加2的结果）cur 是3
+       alert(sum);//15
+       
+        sum=numbers.reduceRight(function(prev,cur,index,array){
+           return prev+cur;
+       });
+       //第一次 perv是5 cur是4第二次 prev是9（5加4的结果）cur是3
+       alert(sum);//15
+        </script>
+``` 
+
+
 
 [1]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#21%E4%BD%9C%E7%94%A8%E5%9F%9F
 [2]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#211%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F
