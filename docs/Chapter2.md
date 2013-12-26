@@ -12,7 +12,13 @@
     * **[2.2.2.2 数组项和长度][8]** 
     * **[2.2.2.3 检测数组][9]**
     * **[2.2.2.4 转换方法][10]** 
-
+    * **[2.2.2.5 栈方法][11]**
+    * **[2.2.2.6 队列方法][12]** 
+    * **[2.2.2.7 重排序方法][13]**
+    * **[2.2.2.8 操作方法][14]** 
+    * **[2.2.2.9 位置方法][15]** 
+    * **[2.2.2.10 迭代方法][16]**
+    * **[2.2.2.11 缩小方法][17]** 
 ### 2.1作用域
 
 #### 2.1.1全局变量和局部变量
@@ -246,6 +252,7 @@ JavaScript提供了push()和pop()方法让数组表现得像栈（先进先出�
         alert(values);//15,10,5,1,0
         </script>
 ```
+
 ##### 2.2.2.8 操作方法
 
 * concat()：这个方法会想创建当前数组的一个副本，然后将接受到的参数添加到这个副本的末尾，最后返回新构建的数组。
@@ -283,6 +290,7 @@ JavaScript提供了push()和pop()方法让数组表现得像栈（先进先出�
         </script>
 ```        
 ##### 2.2.2.9 位置方法
+
 * indexOf()： 开头开始查找
 * lastIndexOf()：末尾开始查找，找不到返回-1.
 
@@ -329,10 +337,11 @@ JavaScript为数组定义了5个迭代方法。
        });
         </script>
 ```    
-##### 2.2.2.11缩小方法
+##### 2.2.2.11 缩小方法
 JavaScript提供了两个缩小数组的方法：
 * reduce()
 * reduceRight()
+
 这两个方法都接受两个参数：一个在每一项上调用的函数和作为缩小基础的初始值。传入的函数接收4个参数：前一个值、当前值、项的索引和数组对象。
 
  ``` javascript
@@ -350,9 +359,70 @@ JavaScript提供了两个缩小数组的方法：
        //第一次 perv是5 cur是4第二次 prev是9（5加4的结果）cur是3
        alert(sum);//15
         </script>
+       
 ``` 
+#### 2.2.3 Date类型
 
+##### 2.2.3.1 创建对象
 
+ ``` javascript
+        <script type="text/javascript">
+        //创建时间对象
+        var date=new Date();
+        
+        alert(date);//Thu Dec 26 2013 11:29:39 GMT+0800 (CST) 打印当前时间
+        //如果想根据特定的日期和时间创建日期对象，必须传入表示该日期的毫秒数(1970
+           // 年1月1日午夜起至该日期经过的毫秒数)。JavaScript为简化操作，提供了两个方法
+        /**
+         * 1.Date.parse()：这个方法因地区而已，将地区设置为美国浏览器通常接受下列日期格式
+         *  年/日/月 如：6/13/2004
+         *  英文月名 日,年 如：January 12,2004
+         *  英文星期几 英文月名 日 年 时:分:秒 时区 如: Tue May 25 2004 00:00:00 GMT-0700
+         *  ISO 8601扩展格式 YYYY-MM-DDTHH:mm:ss:sssZ  如：2004-05-25T00:00:00
+         *
+         * 如果不能表示日期 则返回NaN
+         * 
+         */
+       date=new Date(Date.parse("12/21/2013"));
+       alert(date);//Sat Dec 21 2013 00:00:00 GMT+0800 (CST)
+       //实际上，如果直接将表示日期的字符串传递给Date构造函数，
+       //也会在后台调用Date.parse()方法 所以下面的代码和上面的等价
+       date=new Date("11/11/2013");
+       alert(date);//Mon Nov 11 2013 00:00:00 GMT+0800 (CST)
+       /**
+        *  2.Date.UTC()
+         * 与 Date.parse()在构建值时使用不同的信息。
+         * Date.UTC()的参数分别是年份、月份(0~11)、日（1~31）小时（0～23）
+         * 分钟、秒
+         * 只有年和月是必须的，如果没有提供天数，则默认是1，如果省略其他参数，则统统是0
+        */
+       date=new Date(Date.UTC(2013,10,17,55,55));
+       alert(date);//Tue Nov 19 2013 15:55:00 GMT+0800 (CST)
+       //类似Date.parse 
+       date=new Date(2013,8,17,55,55);
+       alert(date);//Thu Sep 19 2013 07:55:00 GMT+0800 (CST)
+       
+       //Date.now()方法：获取当前毫秒数
+       alert(Date.now());//1388033120172
+        </script>
+``` 
+##### 2.2.3.2 常用方法
+
+ ``` javascript
+ 
+        <script type="text/javascript">
+        //创建时间对象
+        var date=new Date();
+        alert("toLocaleString()--"+date.toLocaleString());//Thu Dec 26 12:58:33 2013
+        alert("toString()--"+date.toString());//Thu Dec 26 2013 12:58:33 GMT+0800 (CST)
+        alert("valueOf()--"+date.valueOf());//1388033913966
+        alert("toDateString()--"+date.toDateString());//Thu Dec 26 2013        
+        alert("toTimeString()--"+date.toTimeString());//12:58:33 GMT+0800 (CST)
+        alert("toLocaleDateString()--"+date.toLocaleDateString());//12/26/2013
+        alert("toLocaleTimeString()--"+date.toLocaleTimeString());//12:58:33
+        alert("toUTCString()--"+date.toUTCString());//Thu, 26 Dec 2013 04:58:33 GMT
+        </script>
+``` 
 
 [1]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#21%E4%BD%9C%E7%94%A8%E5%9F%9F
 [2]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#211%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F
@@ -364,4 +434,11 @@ JavaScript提供了两个缩小数组的方法：
 [8]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2222-%E6%95%B0%E7%BB%84%E9%A1%B9%E5%92%8C%E9%95%BF%E5%BA%A6
 [9]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2223-%E6%A3%80%E6%B5%8B%E6%95%B0%E7%BB%84
 [10]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2224-%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95
+[11]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2225-%E6%A0%88%E6%96%B9%E6%B3%95
+[12]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2226-%E9%98%9F%E5%88%97%E6%96%B9%E6%B3%95
+[13]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2227-%E9%87%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95
+[14]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2228-%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95
+[15]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2229-%E4%BD%8D%E7%BD%AE%E6%96%B9%E6%B3%95
+[16]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#22210-%E8%BF%AD%E4%BB%A3%E6%96%B9%E6%B3%95
+[17]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#22211%E7%BC%A9%E5%B0%8F%E6%96%B9%E6%B3%95
 
