@@ -315,6 +315,7 @@ JavaScript为数组定义了5个迭代方法。
 * map()：对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。
 
  ``` javascript
+ 
         <script type="text/javascript">
         var numbers=[1,2,3,4,5,4,3,2,1];
         var everyResult=numbers.every(function(item,index,array){
@@ -370,6 +371,7 @@ JavaScript提供了两个缩小数组的方法：
 ##### 2.2.3.1 创建对象
 
  ``` javascript
+ 
         <script type="text/javascript">
         //创建时间对象
         var date=new Date();
@@ -425,6 +427,108 @@ JavaScript提供了两个缩小数组的方法：
         alert("toLocaleDateString()--"+date.toLocaleDateString());//12/26/2013
         alert("toLocaleTimeString()--"+date.toLocaleTimeString());//12:58:33
         alert("toUTCString()--"+date.toUTCString());//Thu, 26 Dec 2013 04:58:33 GMT
+        </script>
+``` 
+#### 2.2.4 RegExp
+
+JavaScript通过RegExp类型来支持正则表达式。
+
+##### 2.2.4.1 创建对象
+
+创建一个正则表达式有两种方式
+
+* var expression= /pattern /flags;
+  * pattern部分可以是任何简单或者复杂的正则表达式
+  * flags 用以标明正则表达式的行为。正则表达式的匹配模式支持下列3个标志。
+     + g：全局模式
+     + i：不区分大小写
+     + m：表示多行模式
+* 通过构造函数
+
+ ``` javascript
+ 
+        <script type="text/javascript">
+        //创建一个正则表达式
+        var pattern= /[bc]at/i;
+        alert(pattern.test("cat"));//true
+        //使用构造函数创建一个正则表达
+        var pattern2=new RegExp("[bc]at","i");
+        alert(pattern2.test("Bat"));//true
+        </script>
+``` 
+##### 2.2.4.2 实例属性
+
+ ``` javascript
+        <script type="text/javascript">
+        //创建一个正则表达式
+        var pattern= /[bc]at/i;
+        alert(pattern.global);//false 表示是否设置了g标志
+        alert(pattern.ignoreCase);//true 表示是否设置了i标志
+        alert(pattern.mutiline);//false 表示是否设置了m标志
+        alert(pattern.lastIndex);//0 整数，表示开始搜索下一个匹配项的自负位置，从0开始
+        alert(pattern.source);///[bc]at/i 正则表达式的字符串表示
+        </script>
+``` 
+##### 2.2.4.3 实例方法
+
+ ``` javascript
+        <script type="text/javascript">
+        //创建一个正则表达式
+        var text="mom and dad and baby";
+        var pattern= /mom( and dad( and baby)?)?/gi;
+        //exec（）专门为捕获数组而设计的。
+        var matches=pattern.exec(text);
+        alert(matches.index);//0
+        alert(matches.input);//mom and dad and baby
+        alert(matches[0]);//mom and dad and baby
+        alert(matches[1]);// and dad and baby
+        alert(matches[2]);// and baby
+        //test()方法
+        </script>
+``` 
+##### 2.2.4.4 静态属性
+
+#### 2.2.5 Function类型
+
+JavaScript中，每个函数都是Function类型的实例。由于函数是对象，因此函数名实际上是一个指向函数对象的指针，不会与某个函数绑定。
+
+##### 2.2.5.1 创建函数
+
+ ``` javascript
+
+        <script type="text/javascript">
+        //
+        function sum1(num1,num2){
+            return num1+num2;
+        }
+        alert(sum1(3,8));
+        //使用函数表达式定义函数时，没有必要使用函数名，通过变量sum即可引用函数。
+        var sum2=function(num1,num2){
+            return num1+num2;
+        };
+     
+        alert(sum2(4,9));
+        //使用Function构造函数定义方法
+        var sum3=new Function("num1","num2","return num1+num2");
+        alert(sum3(8,7));//15
+        </script>
+``` 
+##### 2.2.5.2 函数的声明和函数表达式
+
+##### 2.2.5.3 作为值的函数
+
+函数也可以作为值来使用，也就是说，不仅可以像传递参数一样把一个函数传递给另一个函数，而且可以将一个函数作为另一个函数的结果返回。
+
+ ``` javascript
+        <script type="text/javascript">
+        function add10(num){
+            return num+10;
+        }
+        function callSomeFunction(someFunction,someArgument){
+            return someFunction(someArgument);
+        }
+        var result=callSomeFunction(add10,20);//30
+        alert(result);
         </script>
 ``` 
 
