@@ -19,6 +19,10 @@
     * **[2.2.2.9 位置方法][15]** 
     * **[2.2.2.10 迭代方法][16]**
     * **[2.2.2.11 缩小方法][17]** 
+  + **[2.2.3 Date类型][18]** 
+    * **[2.2.3.1 创建对象][19]**
+    * **[2.2.3.2 常用方法][20]** 
+    
 ### 2.1作用域
 
 #### 2.1.1全局变量和局部变量
@@ -440,5 +444,8 @@ JavaScript提供了两个缩小数组的方法：
 [14]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2228-%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95
 [15]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2229-%E4%BD%8D%E7%BD%AE%E6%96%B9%E6%B3%95
 [16]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#22210-%E8%BF%AD%E4%BB%A3%E6%96%B9%E6%B3%95
-[17]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#22211%E7%BC%A9%E5%B0%8F%E6%96%B9%E6%B3%95
+[17]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#22211-%E7%BC%A9%E5%B0%8F%E6%96%B9%E6%B3%95
+[18]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#223-date%E7%B1%BB%E5%9E%8B
+[19]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2231-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1
+[20]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2232-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95
 
