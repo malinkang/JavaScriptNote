@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>实例方法</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <script type="text/javascript">
+        //创建一个正则表达式
+        var text="mom and dad and baby";
+        var pattern= /mom( and dad( and baby)?)?/gi;
+        //exec（）专门为捕获数组而设计的。
+        var matches=pattern.exec(text);
+        alert(matches.index);//0
+        alert(matches.input);//mom and dad and baby
+        alert(matches[0]);//mom and dad and baby
+        alert(matches[1]);// and dad and baby
+        alert(matches[2]);// and baby
+        //test()方法
+        </script>
+    </head>
+</html>

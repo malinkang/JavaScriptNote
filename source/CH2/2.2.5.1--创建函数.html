@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>实例方法</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <script type="text/javascript">
+        //
+        function sum1(num1,num2){
+            return num1+num2;
+        }
+        alert(sum1(3,8));
+        //使用函数表达式定义函数时，没有必要使用函数名，通过变量sum即可引用函数。
+        var sum2=function(num1,num2){
+            return num1+num2;
+        };
+     
+        alert(sum2(4,9));
+        //使用Function构造函数定义方法
+        var sum3=new Function("num1","num2","return num1+num2");
+        alert(sum3(8,7));//15
+        </script>
+    </head>
+</html>
