@@ -22,7 +22,18 @@
   + **[2.2.3 Date类型][18]** 
     * **[2.2.3.1 创建对象][19]**
     * **[2.2.3.2 常用方法][20]** 
-    
+  + **[2.2.4 RegExp][21]** 
+    * **[2.2.4.1 创建对象][22]**
+    * **[2.2.4.2 实例属性][23]** 
+    * **[2.2.4.3 实例方法][24]**
+    * **[2.2.4.4 静态属性][25]** 
+  + **[2.2.5 Function类型][26]** 
+    * **[2.2.5.1 创建函数][27]**
+    * **[2.2.5.2 函数的声明和函数表达式][28]** 
+    * **[2.2.5.3 作为值的函数][29]**
+    * **[2.2.5.4 函数内部属性][30]** 
+    * **[2.2.5.5 函数属性和方法][31]** 
+     
 ### 2.1作用域
 
 #### 2.1.1全局变量和局部变量
@@ -724,4 +735,15 @@ JavaScript中，每个函数都是Function类型的实例。由于函数是对�
 [18]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#223-date%E7%B1%BB%E5%9E%8B
 [19]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2231-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1
 [20]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2232-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95
+[21]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#224-regexp
+[22]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2241-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1
+[23]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2242-%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7
+[24]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2243-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95
+[25]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2244-%E9%9D%99%E6%80%81%E5%B1%9E%E6%80%A7
+[26]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#225-function%E7%B1%BB%E5%9E%8B
+[27]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2251-%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0
+[28]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2252-%E5%87%BD%E6%95%B0%E7%9A%84%E5%A3%B0%E6%98%8E%E5%92%8C%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F
+[29]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2253-%E4%BD%9C%E4%B8%BA%E5%80%BC%E7%9A%84%E5%87%BD%E6%95%B0
+[30]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2254-%E5%87%BD%E6%95%B0%E5%86%85%E9%83%A8%E5%B1%9E%E6%80%A7
+[31]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2255-%E5%87%BD%E6%95%B0%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95
 
