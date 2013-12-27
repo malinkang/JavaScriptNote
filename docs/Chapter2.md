@@ -712,7 +712,199 @@ JavaScript中，每个函数都是Function类型的实例。由于函数是对�
         </script>
         
   ``` 
+#### 2.2.6 基本包装类型
 
+为了便于操作基本类型值，JavaScript还提供了3个特殊的应用类型
+* Boolean
+* Number
+* String
+
+ ``` javascript
+ 
+ <script type="text/javascript">
+        //每当读取一个基本类型值的时候后台就会创建一个对应的基本包装类型对象，从而让我们能够调用
+        //一些方法来操作这些数据
+        var s1="some text";
+        var s2=s1.substring(2);//me text
+        alert(s2);
+        //使用new 操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中
+        //而自动创建的基本包装类型的对象，则只存在于一行代码的执行瞬间，然后立即被销毁。
+        s1.color="red";
+        alert(s1.color);//undefined
+        //Object构造函数也会根据传入值的类型返回相应基本包装类型的实例。
+        var obj=new Object("some text");
+        alert(obj instanceof String);//true
+        /**
+         * 注意：使用new调用基本包装类型的构造函数，与直接调用同名的转型函数是不一样的。
+         */
+        var value="24";
+        var number=Number(value);
+        alert(typeof number);//number
+        var obj2=new Number(value);//构造函数
+        alert(typeof obj2);//object
+        </script>
+        
+  ``` 
+##### 2.2.6.1 Boolean
+
+
+ ``` javascript
+ 
+        <script type="text/javascript">
+        //调用构造函数创建Boolean对象
+        var falseObject=new Boolean(false);//
+       alert(falseObject.valueOf());//false
+       /**
+        * 常见错误 布尔表达式中使用Boolean对象
+        */
+       //布尔表达式中的所有对象都会被转换为true
+       var result1=booleanObject && true;
+       alert(result1);//true
+       var falseValue=false;
+       result2=falseValue&&true;
+       alert(result2);//false
+       alert(typeof falseObject);//object
+       alert(typeof falseValue);//boolean
+       alert(falseObject instanceof Boolean);//true
+       alert(falseValue instanceof Boolean);//false
+        </script>
+  ``` 
+##### 2.2.6.2 Number
+
+ ``` javascript
+
+        <script type="text/javascript">
+			//Number提供了一些用于将数值格式化为字符串的方法。
+
+			//toFixed()方法会按照指定的小数位返回数值的字符串表示
+			//参数：指定显示几位小数
+			var num1 = 10;
+			alert(num1.toFixed(3));
+			//10.000
+			//如果数值本身包含的小数位比指定的还多，那么接近指定的最大小数位
+			//的值就会四舍五入
+			var num2 = 10.003;
+			alert(num2.toFixed(2));
+			//10.00
+			var num3 = 10.005;
+			alert(num3.toFixed(2));
+			//10.01
+
+			//toExponential()该方法返回指数表示法
+			//参数：指定输出结果中的小数位数
+			var num4 = 10;
+			alert(num4.toExponential(2));
+			//1.00e+1
+
+			//toPrecision()方法可能会返回固定大小格式，也可能返回指定指数格式；
+			//具体规则看那种格式最合适。这个方法就接受一个参数：即表示数值的所有数字的位数。
+		  var num5=99;
+		  /**
+		   * 结果是1e+2，因为一位数无法精确地表示99，因此四舍五入为100，这样就可以使用1位数来表示了
+		   */
+		  alert(num5.toPrecision(1));//1e+2 
+		  
+		  alert(num5.toPrecision(2));//99
+		  alert(num5.toPrecision(3));//99.0
+        </script>
+  ``` 
+##### 2.2.6.3 String类型
+
+ ``` javascript
+ 
+      <script type="text/javascript">
+        //使用构造函数来创建
+        var stringObject=new String("hello world");
+        //length属性
+        alert(stringObject.length);
+        //常用方法
+        
+        /**
+         * 字符方法
+         * 1.charAt():返回字符
+         * 2.charCodeAt():返回字符编码
+         * 3.使用方括号加数字索引来访问字符串中的特定字符
+         */
+       alert(stringObject.charAt(1));// e
+       alert(stringObject.charCodeAt(1));//101 也就是小写字母e的字符编码
+       alert(stringObject[1]);//e
+       
+       /**
+        * 字符串操作方法
+        * 1.concat()：拼接字符串，可以接收任意多个参数
+        * concat()可以用来拼接字符串，但是使用+拼接的字符串更方便
+        * 3个创建新字符串的方法
+        * 2.slice()
+        * 3.substr()
+        * 4.substring()
+        */
+       var result1=stringObject.concat(" hi!");//
+       alert(result1);//hello world hi!
+       alert(stringObject);//hello world 
+       alert(stringObject.slice(3));//lo world 
+        
+       alert(stringObject.substring(3));//lo world 
+       alert(stringObject.substr(3));//lo world
+       //在传入负数情况下，他们的行为就不尽相同了不知道为什么报错
+       alert(stringObject.slice(-3));//rld
+       alert(stringObject.substring(-3));//hello world
+       alert(stringObject.substr(-3));//rld
+       
+       /**
+        * 位置方法
+        * 
+        * indexOf()
+        * lastIndexOf()
+        */
+       alert(stringObject.indexOf("o"));//4
+       alert(stringObject.lastIndexOf("o"));//7
+       //从指定位置开始搜索
+       alert(stringObject.indexOf("o",6));//7
+       alert(stringObject.lastIndexOf("o",6));//4
+       
+       
+       /**
+        * trim()方法 去除空格
+        */
+      var stringValue1=" hello world ";
+      alert(stringValue1.trim());
+      
+      /**
+       * 字符串大小写转换
+       */
+      
+      var stringValue1="hello world";
+      //转换为大写
+      alert(stringValue1.toLocaleUpperCase());//
+     alert(stringValue1.toUpperCase());
+     //转换为小写
+      alert(stringValue1.toLowerCase());
+      alert(stringValue1.toLocaleLowerCase());
+      
+      /**
+       * 字符串的模式匹配方法
+       */
+      var text="cat,bat,sat,fat";
+      var pattern=/.at/;
+      var matches=text.match(pattern);
+      alert(matches.index);//0
+      alert(matches[0]);//cat
+      alert(pattern.lastIndex);//0
+      
+      /**
+       * localeCompare（）方法
+       */
+      
+      /**
+       * fromCharCode()方法
+       */
+      
+      /**
+       * HTML方法
+       */
+        </script>
+   
+  ``` 
 
 
 [1]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#21%E4%BD%9C%E7%94%A8%E5%9F%9F
