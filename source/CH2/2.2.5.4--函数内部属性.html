@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>函数内部属性</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <script type="text/javascript">
+			//计算阶乘
+			function factorial1(num) {
+				if (num <= 1) {
+					return 1;
+				} else {
+					return num * factorial1(num - 1);
+				}
+			}
+
+			/**
+			 * 这个函数的执行和函数名factorial紧紧耦合在了一起，为了消除这种耦合现象可以
+			 * 像下面这样使用arguments.callee
+			 */
+			function factorial2(num) {
+				if (num <= 1) {
+					return 1;
+				} else {
+					return num * arguments.callee(num - 1);
+				}
+			}
+
+			//这样无论引用函数时使用的是什么名字，都可以保证正常完成递归调用
+
+			var factorial3 = factorial2;
+			//factorial3实际上是在另外一个位置上保存了一个函数的指针。
+			//所以能得到阶乘
+			factorial2 = function() {
+				return 0;
+			};
+			alert(factorial1(10));
+			//3628800
+			alert(factorial2(10));
+			//0
+
+			alert(factorial3(10));
+			//3628800
+
+			//this关键字
+			window.color = "red";
+			var o = {
+				color : "blue"
+			};
+			function sayColor() {
+				alert(this.color);
+			}
+
+			sayColor();
+			//red
+			//对象定义方法
+			o.sayColor = sayColor;
+			o.sayColor();
+			//blue
+
+			function outer() {
+				inner();
+			}
+
+			function inner() {
+				alert(inner.caller);
+			}
+			
+
+			outer();//显示outer()函数的源代码
+			inner();// ""
+        </script>
+    </head>
+</html>

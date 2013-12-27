@@ -520,6 +520,7 @@ JavaScript中，每个函数都是Function类型的实例。由于函数是对�
 函数也可以作为值来使用，也就是说，不仅可以像传递参数一样把一个函数传递给另一个函数，而且可以将一个函数作为另一个函数的结果返回。
 
  ``` javascript
+ 
         <script type="text/javascript">
         function add10(num){
             return num+10;
@@ -530,7 +531,178 @@ JavaScript中，每个函数都是Function类型的实例。由于函数是对�
         var result=callSomeFunction(add10,20);//30
         alert(result);
         </script>
+        
 ``` 
+
+##### 2.2.5.4 函数内部属性
+
+在函数内部有两个特殊的对象
+
+* arguments
+  * arguments对象有一个名为callee的属性，该属性是一个指针，只想拥有这个arguments对象的函数。
+  
+ ``` javascript
+ 
+        <script type="text/javascript">
+			//计算阶乘
+			function factorial1(num) {
+				if (num <= 1) {
+					return 1;
+				} else {
+					return num * factorial1(num - 1);
+				}
+			}
+
+			/**
+			 * 这个函数的执行和函数名factorial紧紧耦合在了一起，为了消除这种耦合现象可以
+			 * 像下面这样使用arguments.callee
+			 */
+			function factorial2(num) {
+				if (num <= 1) {
+					return 1;
+				} else {
+					return num * arguments.callee(num - 1);
+				}
+			}
+
+			//这样无论引用函数时使用的是什么名字，都可以保证正常完成递归调用
+
+			var factorial3 = factorial2;
+			//factorial3实际上是在另外一个位置上保存了一个函数的指针。
+			//所以能得到阶乘 
+			factorial2 = function() {
+				return 0;
+			};
+			alert(factorial1(10));
+			//3628800
+			alert(factorial2(10));//0
+
+			alert(factorial3(10));//3628800
+        </script>
+        
+  ``` 
+  
+* this：this引用的是函据以执行的环境对象。
+
+  
+ ``` javascript
+ 
+        <script type="text/javascript">
+		//this关键字
+			window.color = "red";
+			var o = {
+				color : "blue"
+			};
+			function sayColor() {
+				alert(this.color);
+			}
+
+			sayColor();
+			//red
+			//对象定义方法
+			o.sayColor = sayColor;
+			o.sayColor();
+			//blue
+        </script>
+        
+  ``` 
+
+* 对象的属性：caller，这个属性中保存着调用当前函数的函数的引用。如果在全局中调用函数，它的值为null；
+
+ ``` javascript
+ 
+        <script type="text/javascript">
+		function outer() {
+				inner();
+			}
+
+			function inner() {
+				alert(inner.caller);
+			}
+			
+
+			outer();//显示outer()函数的源代码
+			inner();// ""
+        </script>
+        
+  ``` 
+  
+##### 2.2.5.5 函数属性和方法
+每个函数都包含两个静态属性：
+* length：表示函数希望接受的命名参数的个数。
+* prototype：
+
+每个函数都包含两个非继承而来的方法，apply()和call()。这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。
+* apply():接受两个参数：一个是在其中运行的作用域，另外一个是参数数组。其中，第二个参数可以是Array的实例，也可以是arguments对象。
+* call():与apply()方法的作用相同，区别仅在于接受参数的方式不同。
+* bind():这个方法会创建一个函数的实例。
+
+
+ ``` javascript
+ 
+      <script type="text/javascript">
+			function sayName(name) {
+
+			}
+
+			function sum(num1, num2) {
+				return num1 + num2;
+			}
+
+			function sayHi() {
+			}
+
+			alert(sayName.length);
+			//1
+			alert(sum.length);
+			//2
+			alert(sayHi.length);
+			//0
+			//apply()方法
+			function callSum1(num1, num2) {
+				return sum.apply(this, arguments);
+			}
+
+			function callSum2(num1, num2) {
+				return sum.apply(this, [num1, num2]);
+			}
+
+			//call()方法
+			function callSum3(num1, num2) {
+				return sum.call(this, num1, num2);
+			}
+
+			alert(callSum1(10, 10));
+			//20
+			alert(callSum2(10, 10));
+			//20
+			alert(callSum3(10, 10));
+			//20
+
+			//它们真正强大的地方是能够扩充函数赖以运行的作用域
+			//对象不需要与方法有任何耦合关系
+			window.color = "red";
+			var o = {
+				color : "blue"
+			};
+			function sayColor() {
+				alert(this.color);
+			}
+
+			sayColor();//red
+			sayColor.call(this);//red
+			sayColor.call(window);//red
+			sayColor.call(o);//blue
+			
+			//bind() 该方法会创建一个对象的实例
+			var objbectSayColor=sayColor.bind(o);
+			
+			objbectSayColor();//blue
+        </script>
+        
+  ``` 
+
+
 
 [1]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#21%E4%BD%9C%E7%94%A8%E5%9F%9F
 [2]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#211%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F
