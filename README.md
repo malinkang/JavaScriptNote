@@ -8,6 +8,6 @@
 
 
 
-[1]: https://github.com/malinkang/JavaScript/blob/master/docs/CH1.md
-[2]: https://github.com/malinkang/JavaScript/blob/master/docs/CH2.md
+[1]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md
+[2]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md
 
