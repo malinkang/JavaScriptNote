@@ -33,6 +33,10 @@
     * **[2.2.5.3 作为值的函数][29]**
     * **[2.2.5.4 函数内部属性][30]** 
     * **[2.2.5.5 函数属性和方法][31]** 
+  + **[2.2.6 基本包装类型][32]** 
+    * **[2.2.6.1 Boolean][33]**
+    * **[2.2.6.2 Number][34]** 
+    * **[2.2.6.3 String类型][35]**
      
 ### 2.1作用域
 
@@ -938,4 +942,8 @@ JavaScript中，每个函数都是Function类型的实例。由于函数是对�
 [29]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2253-%E4%BD%9C%E4%B8%BA%E5%80%BC%E7%9A%84%E5%87%BD%E6%95%B0
 [30]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2254-%E5%87%BD%E6%95%B0%E5%86%85%E9%83%A8%E5%B1%9E%E6%80%A7
 [31]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2255-%E5%87%BD%E6%95%B0%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95
+[32]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#226-%E5%9F%BA%E6%9C%AC%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B
+[33]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2261-boolean
+[34]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2262-number
+[35]:　https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md#2263-string%E7%B1%BB%E5%9E%8B
 
