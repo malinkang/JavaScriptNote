@@ -84,8 +84,8 @@ JavaScript通过Document类型表示文档。在浏览器中document对象是HTM
 
 作为HTMLDocument的一个实例，document对象还有一些标准的Document对象没有的属性。这些属性提供了document对象所表现的网页的一些信息。
 
-* title 包含着<title>元素中的文本。
-* 修改title属性的值不会改变<title>元素。
+* title 包含着\<title>元素中的文本。
+* 修改title属性的值不会改变\<title>元素。
 * URL属性：包含页面完整的URL
 * domain属性中包含页面的域名
 * referrer属性中则保存着链接到当前页面的那个页面的url
@@ -93,7 +93,161 @@ JavaScript通过Document类型表示文档。在浏览器中document对象是HTM
 ##### 6.1.2.3 查找元素
 
 * getElementById():根据ID获取元素，如果页面中多个元素的ID值相同，只返回文档中第一次出现的元素。
-* getElementsByTagName():根据标签名，返回包含零或多个元素的NodeList。在HMLTDocument中，这个方法会返回一个HTMLCollection对象，该对象与NodeList非常类似。HTMLCollection对象还有一个方法，叫做namedItem()
+* getElementsByTagName():根据标签名，返回包含零或多个元素的NodeList。在HMLTDocument中，这个方法会返回一个HTMLCollection对象，该对象与NodeList非常类似。HTMLCollection对象还有一个方法，叫做namedItem()，使用这个方法可以通过元素的name特性取得集合中的项。假设下面提到的页面中包含如下<img>元素
+
+> \<img src="myimage.gif" name="myImage">
+
+那么就可以通过如下方式从images变量中取得这个<img>元素。
+
+>var myImage=images.namedItem("myImage");
+
+也可以通过方括号语法来访问
+
+>var myImage=images["myImage"];
+
+要想取得文档中的所有元素，可以向getElementsByTagName()中传入* 。
+
+* getElementsByName()：只有HTMLDocument类型才有的方法，这个方法会返回带有给定name特性的所有元素。返回也是一个HTMLCollection对象。
+
+##### 6.1.2.4 特殊集合
+
+除了属性和方法，document对象还有一些特殊的集合。这些集合都是HTMLCollection对象，为访问文档常用的部分提供了快捷方式，包括：
+
+* document.anchors 包含文档中所有带name特性的\<a>元素。
+* document.applets 包含文档中所有的\<applet>元素。
+* document.forms
+* document.images
+* document.links
+
+##### 6.1.2.5 DOM一致性检测
+
+##### 6.1.2.6 文档写入
+
+document提供了输入到网页的能力：write（），writenln(),open()和close()。
+
+其中，write()和writeln()方法都接受一个字符串参数，即要写入到输入流中的文本。此外，还可以使用write()和writeln()方法动态地包含外部资源。在包含外部JavaScript文件等。在包含JavaScript文件时，必须注意不能直接包含字符串“\</script>”，因为这会导致该字符串被解释成脚本块的结束，它后面的代码将无法执行。
+
+#### 6.1.3 Element类型
+
+Element类型用于表现XML和HTML元素，提供了对元素标签名，子节点及特性的访问。Element节点具有以下特征：
+
+* nodeType的值为1
+* nodeName的值为元素的标签名
+* nodeValue的值为null
+* parentNode可能是Document或Element
+
+##### 6.1.3.1 HTML元素
+
+所有HTML元素都由HTMLElement类型表示。HTMLElement类型直接继承自Element并添加一些属性。
+
+* id
+* title
+* lang
+* dir
+* calssName
+
+##### 6.1.3.2 取得特性
+
+操作特性的DOM方法有三个
+
+* getAttribute()
+* setAttribute()
+* removeAttribute()
+
+这三个方法可以针对任何特性使用，包括那些以HTMLElement类型属性的形式定义的特性。传递给getAttribute()的特性名。
+
+
+##### 6.1.3.3 设置特性
+
+与getAttribute()对应的方法是setAttribute()
+
+##### 6.1.3.4 attributes属性
+
+##### 6.1.3.5 创建元素
+
+##### 6.1.3.6 元素的子节点
+
+
+#### 6.1.4 Text类型
+
+##### 6.1.4.1 创建文本节点
+
+##### 6.1.4.2 规范化文本节点
+
+##### 6.1.4.3 分割文本节点
+
+#### 6.1.5 Comment类型
+
+#### 6.1.6 CDATASection类型
+
+#### 6.1.7 DocumentType类型
+
+#### 6.1.8 DocumentFragment类型
+
+#### 6.1.9 Attr类型
+
+### 6.2 DOM操作技术
+
+#### 6.2.1 动态脚本
+
+#### 6.2.2 动态样式
+
+#### 6.2.3 操作表格
+
+#### 6.2.4 使用NodeList
+
+### 6.3 选择符API
+
+#### 6.3.1 querySelector()方法
+
+#### 6.3.2 querySelectorAll()方法
+
+#### 6.3.3 matchesSelector()方法
+
+### 6.4 元素遍历
+
+### 6.5 HTML5
+
+#### 6.5.1 与类相关的扩展
+
+
+#### 6.5.2 焦点管理
+
+#### 6.5.3 HTMLDocument的变化
+
+#### 6.5.4 字符集属性
+
+#### 6.5.5 自定义数据类型
+
+#### 6.5.6 插入标记
+
+#### 6.5.7 scrollIntoView（）方法
+
+### 6.6 专有扩展
+
+#### 6.6.1 文档模式
+
+#### 6.6.2 children属性
+
+#### 6.6.3 contains()方法
+
+#### 6.6.4 插入文本
+
+#### 6.6.5 滚动
+
+### 6.7 DOM2和DOM3
+
+#### 6.7.1 DOM变化
+
+#### 6.7.2 样式
+
+#### 6.7.3 遍历
+
+#### 6.7.4 范围
+
+
+
+
 
 
 
