@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    //ECMAScript中的函数名本身就是变量，所以函数函数也可以作为值来使用。
+    function callFunction(someFunction,argument1,argument2 ) {
+        return someFunction(argument1,argument2);
+    }
+
+    function add(num1,num2) {
+        return num1+num2;
+    }
+    var result = callFunction(add,100,200);
+    alert(result); //300
+</script>
+
+</body>
+</html>

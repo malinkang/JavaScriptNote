@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+<script type="text/javascript">
+    //exec()方法是专门为捕获组而设计的
+    var text = "mom mom and dad and baby and dad and baby";
+    var pattern = /mom (and dad (and baby)*)+/gi;
+    var matches = pattern.exec(text);//
+    alert(matches.index);//4 //index 表示匹配项在字符串中的位置
+    alert(matches.input);// mom mom and dad and dad and baby //input表示应用表达式的字符串
+    alert(matches[0]);//mom and dad and dad and baby //第一项是匹配的整个字符串
+    alert(matches[1]);//and dad and baby //第二项是第一个捕获组匹配的内容 (and dad (and baby)*)
+    alert(matches[2]);// and baby第三项是第二个捕获组匹配的内容 (and baby)
+
+    var pattern2 = /(and dad (and baby)*)+/gi;
+    alert(pattern2.test(" and dad and dad and baby "));
+
+    var pattern3 = /(and dad (and baby)*)+/gi;
+    var matches2 = pattern3.exec("mom and dad and dad and baby");
+    alert(matches2[0]);//and dad and dad and baby
+</script>
+</body>
+</html>

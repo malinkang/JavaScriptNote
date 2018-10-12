@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2.字符串操作方法</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+var stringValue = "hello ";
+// concat()方法，用于将一或多个字符串拼接起来
+var result = stringValue.concat("world");
+alert(result); // hello world
+alert(stringValue); // hello
+// concat()可以接受任意多个参数
+result = stringValue.concat("world","!");
+alert(result); //hello world!
+//slice()和substring()的第二个参数指定的是子字符串最后一个字符后面的位置
+//substr()的第二个参数指定的则是返回的字符个数
+// slice()、substr()和substring()也不会修改字符串本身的值
+
+alert(result.slice(3)); // lo world!
+alert(result.substring(3));// lo world!
+alert(result.substr(3)); //lo world!
+alert(result.slice(3,7)); // lo w 不包含7
+alert(result.substring(3,7));// lo w
+alert(result.substr(3,7)) // lo worl
+//传递负值 slice()方法会将传入的负值与字符串的长度相加
+//substring()方法会吧所有负值参数都转换为0
+//substr()方法将负的第一个参数加上字符串的长度，而将负的第二个参数转换为0
+alert(result.slice(-3)); // ld!
+alert(result.substring(-3));//hello world!
+alert(result.substr(-3));//ld!
+alert(result.slice(3,-4));// lo wo
+alert(result.substring(3,-4)); // hel
+alert(result.substr(3,-4)); // 空
+</script>
+
+</body>
+</html>

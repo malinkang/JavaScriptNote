@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    function showMessage() {
+        alert("Hello World!");
+    }
+    </script>
+</head>
+
+<body onload="alert('Loaded!')">
+    <input type="button" value="Click Me" onclick="alert(&quot;Hello World&quot;)">
+    <br/>
+    <input type="button" value="Show Message" onclick="showMessage()">
+    <br/>
+    <input type="button" value="Show Event Type" onclick="alert(event.type)">
+    <br/>
+    <input type="button" value="Click Me" onclick="alert(this.value)">
+    <br/>
+    <form>
+        <input type="text" name="username" value="">
+        <input type="button" value="Echo Username" onclick="alert(username.value)">
+    </form>
+    <br/>
+    <input type="button" id="myBtn" value="DOM0 级事件处理">
+    <br/>
+    <input type="button" id="myBtn2" value="DOM2 级事件处理">
+
+ 
+
+    <canvas id="drawing" width="200" height="200">
+    	A drawing of something
+    </canvas>
+
+    <script type="text/javascript">
+    var btn = document.getElementById("myBtn");
+    btn.onclick = function() {
+        alert("Click");
+        alert(this.id);
+        alert(this.value);
+    };
+    var btn2 = document.getElementById("myBtn2");
+    btn2.addEventListener("click",function(){
+    	alert("Click");
+        alert(this.id);
+        alert(this.value);
+    },false);
+
+    var drawing = document.getElementById("drawing");
+    if(drawing.getContext){
+    	var context = drawing.getContext("2d");
+    	context.strokeStyle = "red";
+    	context.fillStyle="#0000ff";
+    	context.fillRect(10,10,50,50);
+    	context.fillStyle="rgba(0,0,255,0.5)";
+    	context.fillRect(30,30,50,50);
+    }
+    </script>
+</body>
+
+</html>

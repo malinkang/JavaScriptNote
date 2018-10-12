@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>绘制路径</title>
+</head>
+
+<body>
+    <canvas id="drawing" width="200" height="200">
+        A drawing of something.
+    </canvas>
+    <script type="text/javascript">
+    var drawing = document.getElementById('drawing');
+    if (drawing.getContext) {
+        var context = drawing.getContext("2d");
+        context.beginPath();
+        context.arc(100,100,100,0,Math.PI/2,false);
+        context.strokeStyle = "blue";
+        context.stroke();
+    
+    }
+    </script>
+</body>
+
+</html>

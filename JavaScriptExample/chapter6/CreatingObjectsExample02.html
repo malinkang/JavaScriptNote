@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+var person = new Object();
+Object.defineProperty(person,"name",{
+	writable: false,
+	value: "Nicholas"
+})
+alert(person.name); // Nicholas
+person.name = "Greg";
+alert(person.name); // Nicholas
+</script>
+</body>
+</html>

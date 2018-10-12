@@ -1,13 +1,7 @@
-## JavaScript学习笔记
 
 
-### [第 1 章 JavaScript基本语法][1]
+### JavaScript学习资料
 
-### [第 2 章 作用域、引用类型][2]
-
-
-
-
-[1]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter1.md
-[2]: https://github.com/malinkang/JavaScript/blob/master/docs/Chapter2.md
-
+* [JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+* [ECMAScript 6 入门](http://es6.ruanyifeng.com/)
+* [JavaScript教程](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000)

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <img src="1.png" name="myImage"/>
+    <img src="2.png" name="myImage2"/>
+    <img src="3.png" name="myImage3"/>
+    <script type="text/javascript">
+    //在Html文档中，这个方法会返回一个HTMLCollection对象
+    var images = document.getElementsByTagName("img");
+    alert(images.length);
+    alert(images[0].src); //输出第一个图像元素的src特性
+    alert(images.item(0).src); //输出第一个图像元素的src特性
+    //HTMLCollection的namedItem()方法可以通过元素的name特性取得集合中的项目
+    alert(images.namedItem("myImage2").src);
+    alert(images["myImage3"].src);
+
+    document.write("<strong>"+(new Date()).toString()+"</strong>")
+    </script>
+</body>
+
+</html>
