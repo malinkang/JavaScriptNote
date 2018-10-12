@@ -1,81 +1,27 @@
-# 1.基本语法
+# 第3章 基本概念
 
-## 2.1 元素
+## 3.1 语法
 
-向HTML页面中插入JavaScript的主要方法，就是使用`<script>`元素
+### 3.1.1 区分大小写
 
-HTML4.01为`<script>`定义了6个属性：
+### 3.1.2 标识符
 
-* async
-* charset
-* defer
-* language：已废弃
-* src：可选。表示包含要执行代码的外部文件。
-* type：
+* 第一个标识符必须是一个字母、下划线或者美元符号；
+* 其他字可以是字母、下划线、美元符号或数字。
 
-使用`<script>`元素的方式有两种：
+### **3.1.3 注释**
 
-1.直接在页面中嵌入JavaScript代码
+> //单行注释
 
-```javascript
-<script type="text/javascript">
-    alert("Hi");
-</script>
-```
+> /\*\*/多行注释
 
-2.包含外部javascript文件。
+### 3.1.4 严格模式
 
-```javascript
-<script type="text/javascript" src="example.js"></script>
-```
+### 3.1.5 语句
 
-也可以省略结束的&lt;/script&gt;标签，例如
+## 3.2 关键字和保留字
 
-```javascript
-<script type="text/javascript" src="example.js"/>
-```
-
-在使用`<script>`嵌入JavaScript代码，记住不要在代码中任何地方出现`</script>`字符串,如下面代码就会产生错误：
-
-```javascript
-<script type="text/javascript">
-        alert("</script>");
-</script>
-```
-
-当浏览器遇到字符串`</script>`时，就会认为是结束的`</srcipt>`标签。通过把这个字符串分割成两部分可以解决这个问题。例如：
-
-```javascript
-<script type="text/javascript">
-    alert("<\/script>");
-</script>
-```
-
-### 2.1.1 标签的位置
-
-### 2.1.2 延迟脚本
-
-### 2.1.3 异步脚本
-
-### 2.1.4 在XHTML中的语法
-
-## 1.2 基本语法
-
-ECMAScript中的一切（变量、函数名和操作符）都区分大小写,并使用 Unicode字符集。
-
-### 1.2.1 注释
-
-注释的语法与 C ++和许多其他语言中的语法相同：
-
-```text
-// 单行注释
-
-/* 这是一个更长的,
-   多行注释
-*/
-
-/* 然而, 你不能, /* 嵌套注释 */ 语法错误 */
-```
+## 3.3 变量
 
 ## 1.3 声明
 
@@ -155,7 +101,7 @@ if(true){
 }
 ```
 
-## 1.4 数据类型
+## 3.4 数据类型
 
 JavaScript语言定义了下面7种不同类型的值：
 
