@@ -115,9 +115,9 @@ JavaScript语言定义了下面7种不同类型的值：
 * 一种复杂数据类型
   * Object
 
-### 1.4.1 typeof操作符
+### 3.4.1 typeof操作符
 
-`typeof`操作符用来获取变量的数据类型。typeof操作符的操作数可以是变量，也可以是数值字面量。注意，`typeof`是一个操作符而不是函数，因此圆括号尽管可以使用，但不是必须的。
+`typeof`操作符用来获取变量的数据类型。typeof操作符的操作数可以是变量，也可以是数值字面量。注意，`typeof`是一个操作符而不是函数，因此圆括号尽管可以使用，但不是必须 的。
 
 ```javascript
 var a,b="abc",c=true,d=100;
@@ -129,7 +129,7 @@ alert(typeof 123);//number
 alert(typeof null);//object null被认为是一个空的对象引用
 ```
 
-### 1.4.2 Undefined类型
+### 3.4.2 Undefined类型
 
 Undefined类型只是一个值，即特殊的undefined。在使用var声明变量但未对其赋初值或者赋值为undefined，这个变量的值就是undefined。
 
@@ -145,11 +145,11 @@ alert(typeof msg);
 alert(typeof age);
 ```
 
-### 1.4.3 Null类型
+### 3.4.3 Null类型
 
 Null类型也只有一个值，即null。null表示一个空对象指针。所以使用typeof操作符检测null会返回object。
 
-### 1.4.4 Boolean类型
+### 3.4.4 Boolean类型
 
 Boolean只有两个字面值：true和false；虽然Boolean类型的字面值只有两个，但是所有类型的值都有与这两个Boolean值等价的值。要将一个值转换为其对应的Boolean值，可以调用类型转换函数Boolean\(\)。
 
@@ -170,7 +170,7 @@ alert(Boolean(i2));//ture
 //Undefined N/A转换为true undefined转换为false
 ```
 
-### 1.4.5 Number类型
+### 3.4.5 Number类型
 
 Javascript定义了不同的数值字面量格式。
 
@@ -312,7 +312,7 @@ alert(parseFloat("22.33.44"));//22.33
 alert(parseFloat("3.12e8"));//312000000
 ```
 
-### 1.4.6 String类型
+### 3.4.6 String类型
 
 字符串可以由双引号或单引号表示，这两种语法形式没有什么区别。不过，以双引号开头的字符串也必须是以双引号结尾，而单引号开头的字符串必须以单引号结尾。
 
@@ -379,7 +379,7 @@ alert(String(d));//undefined
 
 #### 4.操作字符串
 
-### 1.4.7 Object类型
+### 3.4.7 Object类型
 
 对象可以通过执行new操作符后跟要创建的对象类型的名称来创建。在不传递参数的情况下，完全可以省略圆括号，不过不推荐这么做。
 
@@ -397,4 +397,240 @@ Object类型是所有实例的基础。Object每个实例都具有一下属性�
 * toLocaleString\(\)：
 * toString\(\)：
 * valueOf\(\)：
+
+
+
+## 3.5 操作符
+
+### 3.5.1 一元操作符
+
+#### 1.加、减、乘、除和取余
+
+#### 2.递增和递减
+
+#### 3.幂\(\*\*\)
+
+```javascript
+alert(2**10); //1024
+```
+
+### 3.5.2 位运算符
+
+#### 1.按位非
+
+按位非操作符用一个波浪线（~）表示。
+
+```javascript
+var num1 = 25;    //      0000 0000 0000 0000 0000 0000 0001 1001
+var num2 = ~num1; // 补码  1111 1111 1111 1111 1111 1111 1110 0110 
+                  // 反码  1111 1111 1111 1111 1111 1111 1110 0101
+                  // 原码  1000 0000 0000 0000 0000 0000 0001 1010
+                  // 0x2^0+1x2^1+0x2^2+1x2^3+1x2^4 = 0+2+0+8+16 = 26
+console.log(num2); // -26
+```
+
+#### 2.与
+
+按位与操作符由一个和号字符（&）表示。按位与操作只在两个数值对应位都是1时才返回1，任何一位是0，结果都是0。
+
+```javascript
+var num1 = 25;   //      0000 0000 0000 0000 0000 0000 0001 1001
+var num2 = -3;  //原码    1000 0000 0000 0000 0000 0000 0000 0011
+                //反码    1111 1111 1111 1111 1111 1111 1111 1100
+                //补码    1111 1111 1111 1111 1111 1111 1111 1101
+                // &      0000 0000 0000 0000 0000 0000 0001 1001
+var result = num1 & num2;
+console.log(result); //  1x2^0+0x2^1+0x2^2+1x2^3+1x2^4 = 1+0+0+8+16=25
+```
+
+#### 3.或
+
+按位或操作符由一个竖线符号（\|）表示。按位或操作再有一个位是1的情况下就返回1，而只有在两个位都是0的情况下才返回0。
+
+```javascript
+var num1 = 25;   //      0000 0000 0000 0000 0000 0000 0001 1001
+var num2 = -3;  //原码    1000 0000 0000 0000 0000 0000 0000 0011
+                //反码      1111 1111 1111 1111 1111 1111 1111 1100
+                //补码     1111 1111 1111 1111 1111 1111 1111 1101
+                // |       1111 1111 1111 1111 1111 1111 1111 1101
+var result = num1 | num2;
+console.log(result); //  -3
+```
+
+#### 4.异或
+
+按位异或操作符由一个插入符号（^）表示。相同为0，不同为1。
+
+```javascript
+var num1 = 25;   //      0000 0000 0000 0000 0000 0000 0001 1001
+var num2 = -3;  //原码    1000 0000 0000 0000 0000 0000 0000 0011
+                //反码      1111 1111 1111 1111 1111 1111 1111 1100
+                //补码     1111 1111 1111 1111 1111 1111 1111 1101
+                // ^       1111 1111 1111 1111 1111 1111 1110 0100
+                //         1111 1111 1111 1111 1111 1111 1110 0011
+                //         1000 0000 0000 0000 0000 0000 0001 1100
+var result = num1 ^ num2;
+console.log(result); // -28 2^2+2^3+2^4 = 4+8+16=28
+```
+
+#### 5.左移
+
+左移操作符由两个小于号（&lt;&lt;）表示。左移不会影响操作数的符号位。
+
+```javascript
+var oldValue = -2;  //1111 1111 1111 1111 1111 1111 1111 1110 
+                    //1111 1111 1111 1111 1111 1111 1100 0000 移位操作
+                    //1111 1111 1111 1111 1111 1111 1011 1111 反码
+                    //1000 0000 0000 0000 0000 0000 0100 0000 
+var newValue = oldValue << 5; 
+console.log(newValue); //-64
+```
+
+左移不会影响操作数的符号位。
+
+```javascript
+var oldValue = 2;
+var newValue = oldValue << 30; //将1移动到符号位上
+console.log(newValue); // -2147483648
+```
+
+#### 6.有符号右移动
+
+有符号右移动操作符由两个大于号（&gt;&gt;）表示。
+
+#### 7.无符号右移动
+
+无符号右移动操作符由三个大于号（&gt;&gt;&gt;）表示。对于正数来说，无符号右移的结果与有符号右移相同。对于负数来说，情况就不一样了。首先，无符号右移是以0来填充空位，而不是像有符号右移那样以符号位的值来填充空位。
+
+```javascript
+var oldValue = -2;
+var newValue = oldValue >>> 5;
+console.log(newValue); //134217727
+```
+
+### 3.5.3 逻辑运算符
+
+#### 1.逻辑非
+
+逻辑非操作符由一个叹号（!）表示。
+
+#### 2.逻辑与
+
+逻辑与操作符由两个和号（&&）表示。
+
+#### 3.逻辑或
+
+逻辑或操作符由两个竖线符号（\|\|）表示。
+
+### 3.5.4 关系运算符
+
+### 3.5.6 赋值运算符
+
+### 3.5.7 条件运算符
+
+## 3.6 语句
+
+### 3.6.1 条件语句
+
+####  if语句
+
+#### switch语句
+
+可以在switch语句中使用任何数据类型，每个case的值不一定是常量，可以是变量，甚至是表达式。
+
+```javascript
+var b="goodbye";
+switch("goodbye"){
+   case "hello"+"world":
+        alert("Greeting");
+        break; 
+   case b:
+        alert("GoodBye");
+        break; 
+}//输出goodbye
+```
+
+```javascript
+var num=25;
+switch(true){
+   case num<0:
+   alert("Less than 0");
+   break;
+   case num>=0 && num<=25:
+   alert("BetWeen 0 and 25");
+   break;
+   default:
+   alert("More Than 25");
+}//BetWeen 0 and 25
+```
+
+### 3.6.2 循环语句
+
+#### for语句
+
+#### do-while语句
+
+#### while语句
+
+#### for-in语句
+
+for-in 语句是一种精准的迭代语句，可以用来枚举对象的属性。
+
+语法
+
+```javascript
+for (property in expression) statement
+```
+
+```javascript
+var person = {
+  name : "malinkang",
+  age : 28,
+  job : "Android Engineer"
+};
+for (i in person) {
+  console.log(i);
+}
+//name
+//age
+//job
+```
+
+### 3.6.3 label语句
+
+使用label语句可以在代码中添加标签，方便使用。
+
+### 3.6.4 控制转移语句
+
+break和continue语句用于在循环中精确地控制代码执行。break语退出整个循环，continue会退出当前循环。
+
+```javascript
+var num=0;
+for(var i=1;i<10;i++){
+    if(i%5==0){
+       break;
+    }
+     num++;
+}
+alert(num);//4
+```
+
+```javascript
+var num=0;
+for(var i=1;i<10;i++){
+    if(i%5==0){
+       continue;
+    }
+     num++;
+}
+alert(num);//8
+```
+
+### 3.6.5 对象操作语句
+
+#### with语句
+
+with语句的作用是将作用于设置到一个特定的对象中，with语句语法 with\(expression\)statement;[二、八、十、十六进制转换（图解篇）](http://www.cnblogs.com/gaizai/p/4233780.html)
+
+* [原码, 反码, 补码 详解](https://www.cnblogs.com/zhangziqiu/archive/2011/03/30/ComputerCode.html)
 
