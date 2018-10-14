@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 	<title></title>
+ 	<link rel="stylesheet" href="">
+ </head>
+ <body>
+ 	<canvas id="drawing" width="200" height="200"> A drawing of somthing.</canvas> 
+ 	<script>
+ 		var drawing = document.getElementById("drawing");
+ 		//确定浏览器支持<canvas>元素
+ 		if(drawing.getContext){
+ 			// var context = drawing.getContext("2d");
+ 			// context.strokeStyle = "red";
+ 			// context.fillStyle = "#0000ff"
+ 			// var imgURI = drawing.toDataURL("image/png");
+ 			// var image = document.createElement("img");
+ 			// image.src = imgURI;
+ 			// document.body.appendChild(image);
+ 			context.fillStyle =  "#ff0000";
+ 			context.fillRect(10,10,50,50);
+ 		}
+ 	</script>
+ </body>
+ </html>

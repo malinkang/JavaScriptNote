@@ -3,7 +3,7 @@
 
 DOM是针对HTML和XML文档的一个API。DOM描述了一个层次化的节点树。
 
-## 6.1 节点层次
+## 10.1 节点层次
 
 DOM可以将任何HTML和XML文档描绘成一个由多个节点构成的结构。节点可以分为几种不同的类型，每种类型分别表示文档中不同的信息及标记。每个节点都拥有各自的特点、数据和方法，另外也与其他节点存在某种关系。
 
@@ -11,7 +11,7 @@ DOM可以将任何HTML和XML文档描绘成一个由多个节点构成的结构�
 
 节点一共有12中类型，这些类型都继承自一个基类型。
 
-### 6.1.1 Node类型
+### 10.1.1 Node类型
 
 JavaScript中所有的节点类型都继承自Node类型。
 
@@ -59,7 +59,7 @@ JavaScript中所有的节点类型都继承自Node类型。
 
 * cloneNode()
 
-### 10.2 Document类型
+### 10.1.2 Document类型
 
 JavaScript通过Document类型表示文档。在浏览器中document对象是HTMLDocument（继承自Document类型）的一个实例，表示整个HTML页面。而且document也是window对象的一个属性，因此可以将其作为全局对象来访问。Document节点具有一下特征：
 
@@ -70,7 +70,7 @@ JavaScript通过Document类型表示文档。在浏览器中document对象是HTM
 * ownerDocument的值为null;
 * 子节点可能是一个DocumentType、Element、ProcessingInstruction或Comment
 
-##### 6.1.2.1 文档子节点
+#### 1.文档子节点
 
 访问子节点的方式有两种
 
@@ -79,7 +79,7 @@ JavaScript通过Document类型表示文档。在浏览器中document对象是HTM
 * 作为HTMLDocument的实例，document对象还有一个body属性，直接指向<body>元素。
 * doctype
 
-##### 6.1.2.2 文档信息
+#### 2.文档信息
 
 作为HTMLDocument的一个实例，document对象还有一些标准的Document对象没有的属性。这些属性提供了document对象所表现的网页的一些信息。
 
@@ -89,7 +89,7 @@ JavaScript通过Document类型表示文档。在浏览器中document对象是HTM
 * domain属性中包含页面的域名
 * referrer属性中则保存着链接到当前页面的那个页面的url
 
-##### 6.1.2.3 查找元素
+#### 3.查找元素
 
 * getElementById():根据ID获取元素，如果页面中多个元素的ID值相同，只返回文档中第一次出现的元素。
 * getElementsByTagName():根据标签名，返回包含零或多个元素的NodeList。在HMLTDocument中，这个方法会返回一个HTMLCollection对象，该对象与NodeList非常类似。HTMLCollection对象还有一个方法，叫做namedItem()，使用这个方法可以通过元素的name特性取得集合中的项。假设下面提到的页面中包含如下<img>元素
@@ -108,7 +108,7 @@ JavaScript通过Document类型表示文档。在浏览器中document对象是HTM
 
 * getElementsByName()：只有HTMLDocument类型才有的方法，这个方法会返回带有给定name特性的所有元素。返回也是一个HTMLCollection对象。
 
-##### 6.1.2.4 特殊集合
+#### 4.特殊集合
 
 除了属性和方法，document对象还有一些特殊的集合。这些集合都是HTMLCollection对象，为访问文档常用的部分提供了快捷方式，包括：
 
@@ -118,15 +118,15 @@ JavaScript通过Document类型表示文档。在浏览器中document对象是HTM
 * document.images
 * document.links
 
-##### 6.1.2.5 DOM一致性检测
+#### 5.DOM一致性检测
 
-##### 6.1.2.6 文档写入
+#### 6.文档写入
 
 document提供了输入到网页的能力：write（），writenln(),open()和close()。
 
 其中，write()和writeln()方法都接受一个字符串参数，即要写入到输入流中的文本。此外，还可以使用write()和writeln()方法动态地包含外部资源。在包含外部JavaScript文件等。在包含JavaScript文件时，必须注意不能直接包含字符串“\</script>”，因为这会导致该字符串被解释成脚本块的结束，它后面的代码将无法执行。
 
-#### 6.1.3 Element类型
+### 10.1.3 Element类型
 
 Element类型用于表现XML和HTML元素，提供了对元素标签名，子节点及特性的访问。Element节点具有以下特征：
 
@@ -135,7 +135,7 @@ Element类型用于表现XML和HTML元素，提供了对元素标签名，子节
 * nodeValue的值为null
 * parentNode可能是Document或Element
 
-##### 6.1.3.1 HTML元素
+#### 1.HTML元素
 
 所有HTML元素都由HTMLElement类型表示。HTMLElement类型直接继承自Element并添加一些属性。
 
@@ -145,7 +145,7 @@ Element类型用于表现XML和HTML元素，提供了对元素标签名，子节
 * dir
 * calssName
 
-##### 6.1.3.2 取得特性
+#### 2.取得特性
 
 操作特性的DOM方法有三个
 
@@ -156,93 +156,93 @@ Element类型用于表现XML和HTML元素，提供了对元素标签名，子节
 这三个方法可以针对任何特性使用，包括那些以HTMLElement类型属性的形式定义的特性。传递给getAttribute()的特性名。
 
 
-##### 6.1.3.3 设置特性
+#### 3.设置特性
 
 与getAttribute()对应的方法是setAttribute()
 
-##### 6.1.3.4 attributes属性
+#### 4.attributes属性
 
-##### 6.1.3.5 创建元素
+#### 5.创建元素
 
-##### 6.1.3.6 元素的子节点
-
-
-#### 6.1.4 Text类型
-
-##### 6.1.4.1 创建文本节点
-
-##### 6.1.4.2 规范化文本节点
-
-##### 6.1.4.3 分割文本节点
-
-#### 6.1.5 Comment类型
-
-#### 6.1.6 CDATASection类型
-
-#### 6.1.7 DocumentType类型
-
-#### 6.1.8 DocumentFragment类型
-
-#### 6.1.9 Attr类型
-
-### 6.2 DOM操作技术
-
-#### 6.2.1 动态脚本
-
-#### 6.2.2 动态样式
-
-#### 6.2.3 操作表格
-
-#### 6.2.4 使用NodeList
-
-### 6.3 选择符API
-
-#### 6.3.1 querySelector()方法
-
-#### 6.3.2 querySelectorAll()方法
-
-#### 6.3.3 matchesSelector()方法
-
-### 6.4 元素遍历
-
-### 6.5 HTML5
-
-#### 6.5.1 与类相关的扩展
+#### 6.元素的子节点
 
 
-#### 6.5.2 焦点管理
+### 10.1.4 Text类型
 
-#### 6.5.3 HTMLDocument的变化
+#### 1.创建文本节点
 
-#### 6.5.4 字符集属性
+#### 2.规范化文本节点
 
-#### 6.5.5 自定义数据类型
+#### 3.分割文本节点
 
-#### 6.5.6 插入标记
+### 10.1.5 Comment类型
 
-#### 6.5.7 scrollIntoView（）方法
+### 10.1.6 CDATASection类型
 
-### 6.6 专有扩展
+### 10.1.7 DocumentType类型
 
-#### 6.6.1 文档模式
+### 10.1.8 DocumentFragment类型
 
-#### 6.6.2 children属性
+###  10.1.9 Attr类型
 
-#### 6.6.3 contains()方法
+## 10.2 DOM操作技术
 
-#### 6.6.4 插入文本
+### 10.2.1 动态脚本
 
-#### 6.6.5 滚动
+### 10.2.2 动态样式
 
-### 6.7 DOM2和DOM3
+### 10.2.3 操作表格
 
-#### 6.7.1 DOM变化
+### 10.2.4 使用NodeList
 
-#### 6.7.2 样式
+## 10.3 选择符API
 
-#### 6.7.3 遍历
+### 10.3.1 querySelector()方法
 
-#### 6.7.4 范围
+### 10.3.2 querySelectorAll()方法
+
+### 10.3.3 matchesSelector()方法
+
+## 10.4 元素遍历
+
+## 10.5 HTML5
+
+### 10.5.1 与类相关的扩展
+
+
+### 10.5.2 焦点管理
+
+### 10.5.3 HTMLDocument的变化
+
+### 10.5.4 字符集属性
+
+### 10.5.5 自定义数据类型
+
+### 10.5.6 插入标记
+
+### 10.5.7 scrollIntoView（）方法
+
+## 10.6 专有扩展
+
+### 10.6.1 文档模式
+
+### 10.6.2 children属性
+
+### 10.6.3 contains()方法
+
+### 10.6.4 插入文本
+
+### 10.6.5 滚动
+
+## 10.7 DOM2和DOM3
+
+### 10.7.1 DOM变化
+
+### 10.7.2 样式
+
+### 10.7.3 遍历
+
+### 10.7.4 范围
 
 
 
