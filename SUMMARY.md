@@ -1,6 +1,7 @@
 # Table of contents
 
 * [JavaScript学习笔记](README.md)
+* [函数](functions.md)
 * [第2章 在HTML中使用JavaScript](chapter-2-javascript-in-html.md)
 * [第3章 基本概念](di-3-zhang-ji-ben-gai-nian.md)
 * [第4章 变量、作用域和内存问题](chapter4.md)
