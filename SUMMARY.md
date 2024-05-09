@@ -1,12 +1,12 @@
 # Table of contents
 
 * [JavaScript学习笔记](README.md)
+* [在HTML中使用JavaScript](javascript-in-html.md)
+* [基础](basic.md)
 * [函数](functions.md)
-* [第2章 在HTML中使用JavaScript](chapter-2-javascript-in-html.md)
-* [第3章 基本概念](di-3-zhang-ji-ben-gai-nian.md)
+* [面向对象的程序设计](object.md)
 * [第4章 变量、作用域和内存问题](chapter4.md)
 * [第5章 引用类型](7.built-inobjects.md)
-* [第6章 面向对象的程序设计](6.objectoriented.md)
 * [第8章 BOM](chapter8.md)
 * [第10章 DOM](chapter10.md)
 * [第13章 事件](di-13-zhang-shi-jian.md)

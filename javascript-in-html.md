@@ -1,4 +1,4 @@
-# 第2章 在HTML中使用JavaScript
+# 基础
 
 ## 2.1 &lt;script&gt;元素
 

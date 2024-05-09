@@ -10,4 +10,5 @@
 * https://github.com/microsoft/Web-Dev-For-Beginners/tree/main
 * https://tailwindcss.com/
 * https://ui.shadcn.com/
+* [现代 JavaScript 教程](https://zh.javascript.info/)
 

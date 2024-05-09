@@ -8,28 +8,29 @@
 
 <body>
     <script type="text/javascript">
-    function Person(name, age, job) {
-        this.name = name;
-        this.age = age;
-        this.job = job;
-        this.sayName = function() {
-            alert(this.name)
-        };
-    }
-    //当做构造函数使用
-    var person = new Person("Nicholas", 29, "Software Engineer");
-    person.sayName(); //Nicholas
-    // 作为普通函数调用
+    
+    // function Person(name, age, job) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.job = job;
+    //     this.sayName = function() {
+    //         alert(this.name)
+    //     };
+    // }
+    // //当做构造函数使用
+    // var person = new Person("Nicholas", 29, "Software Engineer");
+    // person.sayName(); //Nicholas
+    // // 作为普通函数调用
 
-    //当在全局作用域中调用一个函数时，Person方法中的this对象总是指向Global对象
-    //在浏览器中就是window对象 
-    Person("Greg", 27, "Doctor");
-    window.sayName(); //Greg
+    // //当在全局作用域中调用一个函数时，Person方法中的this对象总是指向Global对象
+    // //在浏览器中就是window对象 
+    // Person("Greg", 27, "Doctor");
+    // window.sayName(); //Greg
 
-    //在另外一个对象的作用域中调用
-    var o = new Object();
-    Person.call(o,"Kristen",25,"Nurse");
-    o.sayName(); //Kristen
+    // //在另外一个对象的作用域中调用
+    // var o = new Object();
+    // Person.call(o,"Kristen",25,"Nurse");
+    // o.sayName(); //Kristen
 
     </script>
 </body>
