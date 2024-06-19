@@ -45,6 +45,13 @@ console.log(sum4(10, 20));
 === "Kotlin"
     ```kotlin
     var ints = arrayOf(1, 2, 3)
+    println(ints.map(fun(i:Int):Int{
+        return i * i;
+    }))
+    println(ints.map({i-> 
+        println("i = $i")
+        i * i
+    }))
     // map 返回一个新list
     print(ints.map { it * it })
     ```
@@ -53,8 +60,8 @@ console.log(sum4(10, 20));
 
 ```javascript
 function sum(num1, num2) {
-    return num1 + num2;
-  }
+  return num1 + num2;
+}
 console.log(sum(10, 10));           // 20
 let anotherSum = sum;
 console.log(anotherSum(10, 10));   // 20

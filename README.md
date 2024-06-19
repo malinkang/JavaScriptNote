@@ -12,3 +12,17 @@
 * https://ui.shadcn.com/
 * [现代 JavaScript 教程](https://zh.javascript.info/)
 
+## NodeJS
+
+### NPM
+
+```
+npm -v
+npm i -g 全局安装
+npm root -g 查看全局安装包位置
+npm r 移除包
+```
+
+## 浏览器插件
+
+* https://github.com/PlasmoHQ/plasmo/
